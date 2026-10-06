@@ -1497,64 +1497,46 @@ Keep your response engaging, concise (1-3 paragraphs), formatted with clear poin
       loadingIndicator.classList.add('flex');
       contentArea.innerHTML = '';
 
-      // Direct shortcuts for category questions
+      // Smart routing: specific views for category-level questions
       const lower = userQuery.toLowerCase();
-      if (lower.includes('experience') || lower.includes('job') || lower.includes('work experience') || lower.includes('internship')) {
+
+      // Experience / Work History → Rich experience card view
+      if ((lower.includes('experience') || lower.includes('work history') || lower.includes('internship') || lower.includes('hoffmann') || lower.includes('shreeji') || lower.includes('phoenix fab') || lower.includes('ohm automotive') || lower.includes('tsl consulting'))
+          && !lower.includes('why') && !lower.includes('how') && !lower.includes('what did you learn')) {
         renderExperienceView();
         return;
       }
-      if (lower.includes('project') || lower.includes('publication') || lower.includes('research')) {
+
+      // Projects / Publications → Swipeable project cards view
+      if ((lower.includes('project') || lower.includes('projects'))
+          && !lower.includes('why') && !lower.includes('salary') && !lower.includes('hire')) {
         renderProjectsView();
         return;
       }
-      if (lower.includes('skill') || lower.includes('crm') || lower.includes('hard skills') || lower.includes('soft skills')) {
+
+      // Skills → Skills badge view
+      if ((lower.includes('what are your skills') || lower.includes('list your skills') || lower.includes('show me your skills') || lower.includes('hard skills') || lower.includes('soft skills') || lower.includes('salesforce') || lower.includes('hubspot'))
+          && !lower.includes('why') && !lower.includes('hire')) {
         renderSkillsView();
         return;
       }
-      if (lower.includes('contact') || lower.includes('reach you') || lower.includes('hire') || lower.includes('email') || lower.includes('phone') || lower.includes('whatsapp')) {
+
+      // Contact → Contact view
+      if (lower.includes('how can i reach') || lower.includes('how to contact') || lower.includes('whatsapp') || lower.includes('your email') || lower.includes('your phone') || lower.includes('linkedin')) {
         renderContactView();
         return;
       }
-      if (lower === 'tell me about yourself briefly.' || lower === 'who are you?') {
+
+      // About Me → Me view
+      if (lower === 'tell me about yourself briefly.' || lower === 'who are you?' || lower === 'introduce yourself' || lower === 'who is tushar?') {
         renderMeView();
         return;
       }
 
-      // Try calling the Gemini API (with empty API key as instructed)
-      try {
-        const apiKey = "";
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-
-        const payload = {
-          contents: [{ parts: [{ text: userQuery }] }],
-          systemInstruction: {
-            parts: [{ text: SYSTEM_PROMPT }]
-          }
-        };
-
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) throw new Error("API call failed");
-
-        const result = await response.json();
-        const candidate = result.candidates?.[0];
-        const replyText = candidate?.content?.parts?.[0]?.text;
-
-        if (replyText) {
-          renderAiChatReply(replyText);
-          return;
-        } else {
-          throw new Error("No candidate reply");
-        }
-      } catch (err) {
-        // Fallback intelligent response based on query
-        generateFallbackResponse(userQuery);
-      }
+      // Everything else → comprehensive smart fallback (handles 20+ question types)
+      generateFallbackResponse(userQuery);
     }
+
 
     function renderAiChatReply(text) {
       loadingIndicator.classList.add('hidden');
@@ -1595,15 +1577,96 @@ Keep your response engaging, concise (1-3 paragraphs), formatted with clear poin
       loadingIndicator.classList.add('hidden');
       loadingIndicator.classList.remove('flex');
 
-      let reply = `Thank you for asking! I'm <strong>Tushar Sushil Phulari</strong>, a 23-year-old Instrumentation & Control Engineer and MBA Marketing candidate at Middlesex University Dubai with 1.5+ years of B2B industrial sales experience. At Hoffmann Group India, I consistently hit quota while expanding regional client accounts by 20%. I am based in Dubai and ready to step into a high-impact Business Development or Industrial Marketing role immediately!`;
-
       const q = query.toLowerCase();
-      if (q.includes('resume') || q.includes('cv')) {
-        reply = `You can review my complete background right here! Key highlights include 1.5+ years at Hoffmann Group India (delivering consistent quota attainment and 20% territory growth), 40+ SQLs generated at Shreeji Marketing, and my Scopus-indexed research on IoT Blockchain Security. Reach out on WhatsApp at <strong>+91 8180071303</strong> or email <strong>tusharphulari303@gmail.com</strong> for my direct PDF CV!`;
-      } else if (q.includes('where') || q.includes('located') || q.includes('from')) {
-        reply = `I am currently based in <strong>Dubai, United Arab Emirates</strong>, pursuing my MBA in Marketing at Middlesex University Dubai, and available to join immediately for full-time opportunities across the UAE!`;
-      } else if (q.includes('why should i hire you') || q.includes('valuable')) {
-        reply = `What sets me apart is the combination of <strong>deep engineering literacy (B.Tech Instrumentation & Control)</strong> and <strong>high-energy B2B sales execution</strong>. I can speak the technical language of plant managers and technical directors, while executing CRM sequences, cold calls, and quota-crushing territory strategies.`;
+      let reply = `Thank you for asking! I'm <strong>Tushar Sushil Phulari</strong>, a 23-year-old B2B Business Development professional with 1.5+ years of hands-on industrial sales experience. I hold a B.Tech in Instrumentation &amp; Control Engineering and I'm currently pursuing my <strong>MBA in Marketing at Middlesex University Dubai</strong>. At Hoffmann Group India, I expanded territory clients by 20% and hit quota every quarter. I'm based in Dubai and ready to join immediately! 🚀 What would you like to know?`;
+
+      // --- HIRE / VALUE ---
+      if (q.includes('why should') || q.includes('hire you') || q.includes('valuable') || q.includes('stand out') || q.includes('different') || q.includes('unique') || q.includes('best candidate')) {
+        reply = `Here's exactly why you should hire me:<br><br>🎯 <strong>Dual Expertise — Engineering + MBA:</strong> I speak the technical language of plant managers AND execute high-velocity B2B sales strategies. Very few candidates offer both.<br><br>📈 <strong>Proven, Measurable Results:</strong> 20% B2B territory growth at Hoffmann Group India, 40+ Sales Qualified Leads in 4 months at Shreeji Marketing, 100%+ quota attainment across consecutive quarters.<br><br>🌍 <strong>Dubai-Ready &amp; Available Immediately:</strong> I'm based in Dubai right now, with a strong understanding of the GCC industrial market.<br><br>🔬 <strong>Research-Backed Mindset:</strong> My Scopus-indexed publication on IoT Blockchain Security shows I bring analytical, structured thinking to every business challenge.<br><br>💼 <strong>CRM-First Approach:</strong> Salesforce, HubSpot, LinkedIn Sales Navigator — I build pipelines that don't leak. Ready to hit the ground running from Day 1!`;
+
+      // --- SALARY / EXPECTATIONS ---
+      } else if (q.includes('salary') || q.includes('expectation') || q.includes('package') || q.includes('compensation') || q.includes('ctc') || q.includes('pay')) {
+        reply = `I'm open to discussing a competitive compensation package that reflects the value I bring — consistent quota attainment, territory expansion, and strong CRM execution. I'm targeting market-rate Business Development roles in Dubai/UAE, and I'm flexible for the right opportunity with growth potential. Let's have a direct conversation — reach me on WhatsApp at <strong>+91 8180071303</strong> or email <strong>tusharphulari303@gmail.com</strong>!`;
+
+      // --- RESUME / CV ---
+      } else if (q.includes('resume') || q.includes('cv') || q.includes('portfolio') || q.includes('download')) {
+        reply = `You can review my complete background right here on this interactive portfolio! Key highlights:<br><br>📋 <strong>1.5+ Years</strong> at Hoffmann Group India — 20% territory growth, consecutive quota attainment<br>🎯 <strong>40+ SQLs</strong> in 4 months at Shreeji Marketing Corporation<br>🔬 <strong>Scopus-indexed research</strong> on IoT Blockchain Security<br>🎓 <strong>B.Tech Instrumentation &amp; Control</strong> (CGPA 8.30) + MBA Marketing (Middlesex University Dubai)<br><br>📩 For my full PDF CV, reach me directly: <strong>tusharphulari303@gmail.com</strong> or WhatsApp <strong>+91 8180071303</strong>`;
+
+      // --- LOCATION / AVAILABILITY ---
+      } else if (q.includes('where') || q.includes('located') || q.includes('location') || q.includes('available') || q.includes('availability') || q.includes('join') || q.includes('notice') || q.includes('when can')) {
+        reply = `I am currently <strong>based in Dubai, United Arab Emirates</strong> and available to join <strong>immediately</strong> — zero notice period required. I'm pursuing my MBA in Marketing at Middlesex University Dubai while actively seeking full-time Business Development, Sales, or Industrial Marketing roles across the UAE. Dubai/GCC is my home right now, and I'm ready to hit the ground running from Day 1! 📍`;
+
+      // --- EDUCATION ---
+      } else if (q.includes('education') || q.includes('degree') || q.includes('university') || q.includes('college') || q.includes('qualification') || q.includes('mba') || q.includes('btech') || q.includes('study') || q.includes('studied') || q.includes('cgpa') || q.includes('grade')) {
+        reply = `My educational background combines technical depth with business strategy:<br><br>🎓 <strong>MBA in Marketing</strong> — Middlesex University Dubai (2026–Present, In Progress)<br>⚙️ <strong>B.Tech in Instrumentation &amp; Control Engineering</strong> — Vishwakarma Institute of Technology (VIT), Pune | CGPA: 8.30 (2025)<br><br>This combination is rare and powerful — I can walk into a manufacturing plant, understand the engineering specs, and still close the commercial deal. It's what makes me a unique asset for any B2B industrial sales or business development team! 🚀`;
+
+      // --- CERTIFICATIONS / AWARDS ---
+      } else if (q.includes('certif') || q.includes('award') || q.includes('achievement') || q.includes('medal') || q.includes('ncc') || q.includes('scout') || q.includes('google ux')) {
+        reply = `I'm proud of both my professional certifications and personal achievements!<br><br>📜 <strong>Certifications:</strong><br>• Google UX Design Professional Certificate<br>• IT Security Specialist<br>• Prompt Engineering Skills<br><br>🏆 <strong>Awards &amp; Recognition:</strong><br>• <strong>National Gold Medalist</strong> — Academic Excellence<br>• <strong>Rajya Puraskar Scout Governor's Award</strong> — Leadership &amp; Community Service<br>• <strong>NCC 'A' Certificate</strong> — Discipline &amp; National Service<br><br>These recognitions reflect my commitment to excellence in everything I pursue! 🌟`;
+
+      // --- HOFFMANN GROUP ---
+      } else if (q.includes('hoffmann') || q.includes('cutting tool') || q.includes('west region') || q.includes('south region') || q.includes('maharashtra') || q.includes('tamil nadu')) {
+        reply = `At <strong>Hoffmann Group India</strong> (Jan 2025 – May 2026), I served as a <strong>Business Development Engineer</strong> with full ownership of B2B territory sales:<br><br>📍 <strong>Regions Managed:</strong> West Region (Maharashtra &amp; Madhya Pradesh) → South Region (Tamil Nadu, Pondicherry, Kerala)<br>📈 <strong>20% client portfolio growth</strong> through outbound prospecting, inbound qualification, and full-cycle deal closing<br>🔧 Delivered on-site technical cutting tool demonstrations to plant managers and engineering teams<br>🏆 Achieved <strong>100%+ quota attainment</strong> across consecutive quarters<br>🤝 Resigned in May 2026 after leading a smooth regional transition; now available immediately in Dubai!`;
+
+      // --- SHREEJI MARKETING ---
+      } else if (q.includes('shreeji') || q.includes('sql') || q.includes('lead generation') || q.includes('outbound') || q.includes('cold call') || q.includes('prospecting')) {
+        reply = `At <strong>Shreeji Marketing Corporation</strong> (May–Oct 2024), I worked as a <strong>Technical &amp; Sales Intern</strong> focused on outbound lead generation:<br><br>🎯 Generated <strong>40+ Sales Qualified Leads (SQLs)</strong> in just 4 months<br>📞 Ran structured cold outreach sequences via phone, email, and LinkedIn Sales Navigator targeting B2B manufacturing decision-makers<br>🔄 Architected <strong>automated CRM lead-tracking workflows</strong> to ensure zero pipeline leakage<br>📋 Partnered with technical sales directors to prepare tailored commercial proposals<br><br>This internship taught me to build pipelines from scratch — a skill I bring to every role I take on! 💪`;
+
+      // --- SKILLS / TOOLS ---
+      } else if (q.includes('salesforce') || q.includes('hubspot') || q.includes('linkedin') || q.includes('navigator') || q.includes('tool') || q.includes('software') || q.includes('crm')) {
+        reply = `I'm proficient in a full stack of B2B sales tools:<br><br>🛠️ <strong>CRM &amp; Sales Intelligence:</strong><br>• Salesforce CRM — Pipeline management &amp; opportunity tracking<br>• HubSpot — Lead nurturing &amp; workflow automation<br>• LinkedIn Sales Navigator — Precision B2B prospecting<br>• Lead Qualification Workflows &amp; Discovery Call frameworks<br><br>⚙️ <strong>Engineering &amp; Technical Domain:</strong> Instrumentation &amp; Control systems, product demonstrations, industrial cutting tools, heavy fabrication<br><br>🎨 <strong>Design &amp; Emerging Tech:</strong> Google UX Design, Prompt Engineering, IoT Architecture, Blockchain Fundamentals<br><br>I don't just know these tools — I've used them in real-world, high-pressure B2B environments to generate revenue! 🚀`;
+
+      // --- STRENGTHS ---
+      } else if (q.includes('strength') || q.includes('good at') || q.includes('best at') || q.includes('superpower') || q.includes('expert')) {
+        reply = `My greatest strengths that directly translate to business results:<br><br>💡 <strong>Technical-Commercial Bridge:</strong> I can explain complex industrial products in business language — and close the deal.<br><br>🔥 <strong>High-Activity Prospecting:</strong> Cold calling, multi-touch email sequences, LinkedIn outreach — I know how to build pipeline from zero.<br><br>🎯 <strong>Quota Execution:</strong> At Hoffmann Group, I didn't just meet targets — I exceeded them consecutively for 5+ quarters.<br><br>🤝 <strong>Relationship Building:</strong> I build long-term, trust-based client relationships — not one-time transactional deals.<br><br>📊 <strong>CRM Discipline:</strong> I keep pipelines clean, accurate, and actionable. No leads fall through the cracks on my watch!`;
+
+      // --- WEAKNESSES ---
+      } else if (q.includes('weakness') || q.includes('improve') || q.includes('challenge') || q.includes('work on') || q.includes('fail')) {
+        reply = `Great question! I believe in honest self-awareness:<br><br>🔄 <strong>Area I'm Actively Improving:</strong> Early in my career, I sometimes spent too much time perfecting proposals instead of sending them faster. I've since adopted a "good-enough-to-send, iterate-from-feedback" approach that's made me significantly more productive.<br><br>📚 <strong>Current Growth Focus:</strong> I'm deepening my understanding of strategic account management and enterprise-level B2B deal structures through my MBA at Middlesex University Dubai.<br><br>I believe every weakness is just a skill in development — and I bring the same discipline to self-improvement that I bring to hitting sales quotas! 💪`;
+
+      // --- 5-YEAR PLAN / GOALS ---
+      } else if (q.includes('5 year') || q.includes('five year') || q.includes('future') || q.includes('goal') || q.includes('aspiration') || q.includes('plan') || q.includes('ambition') || q.includes('career')) {
+        reply = `My 5-year vision is clear and ambitious:<br><br>🎯 <strong>Year 1–2:</strong> Excel as a Business Development Manager/Engineer in a UAE-based MNC — owning a full B2B territory, building client relationships, and consistently exceeding revenue targets.<br><br>📈 <strong>Year 3–4:</strong> Step into a Senior BDM or Regional Sales Director role, leveraging my MBA Marketing expertise to design go-to-market strategies for the GCC market.<br><br>🌍 <strong>Year 5+:</strong> Lead a high-performance B2B sales division, building and mentoring a regional sales team across the Middle East.<br><br>I'm playing the long game — but I deliver short-term results on the way there! 🚀`;
+
+      // --- PERSONALITY / TELL ME ABOUT YOURSELF ---
+      } else if (q.includes('tell me about') || q.includes('introduce') || q.includes('who are you') || q.includes('yourself') || q.includes('background')) {
+        reply = `I'm <strong>Tushar Sushil Phulari</strong> — a 23-year-old Business Development professional who bridges the gap between engineering and sales.<br><br>⚙️ I hold a <strong>B.Tech in Instrumentation &amp; Control Engineering</strong> (VIT Pune, CGPA 8.30) and I'm currently pursuing my <strong>MBA in Marketing at Middlesex University Dubai</strong>.<br><br>💼 With 1.5+ years of B2B industrial sales experience at Hoffmann Group India, I expanded territory clients by 20% and consistently hit quota. Before that, I generated 40+ SQLs in 4 months at Shreeji Marketing.<br><br>🌍 I'm currently based in <strong>Dubai, UAE</strong>, available to join immediately, and passionate about building revenue-driving partnerships in the GCC industrial market. What would you like to know more about? 😊`;
+
+      // --- TEAM PLAYER / COLLABORATION ---
+      } else if (q.includes('team') || q.includes('collaboration') || q.includes('work with others') || q.includes('colleague') || q.includes('leadership')) {
+        reply = `I'm a strong team player who also thrives independently — the best of both worlds!<br><br>🤝 At <strong>Hoffmann Group</strong>, I collaborated cross-functionally with product teams, technical engineers, and logistics to deliver seamless client experiences.<br><br>👥 At <strong>Shreeji Marketing</strong>, I partnered directly with senior sales directors to craft technical proposals and qualification strategies.<br><br>🔬 My <strong>Scopus-indexed research paper</strong> was a collaborative academic project — demonstrating my ability to coordinate, contribute, and deliver in team settings.<br><br>I believe great sales results come from great teamwork. I lift my teammates up, share knowledge openly, and always put the team's goals first! 🌟`;
+
+      // --- MOTIVATION / PASSION ---
+      } else if (q.includes('motivat') || q.includes('passion') || q.includes('why sales') || q.includes('why bd') || q.includes('why business') || q.includes('love about') || q.includes('enjoy')) {
+        reply = `What drives me every single day is the thrill of turning a cold prospect into a long-term client partner!<br><br>🔥 I genuinely love the <strong>problem-solving aspect</strong> of B2B sales — understanding a client's pain point and crafting a solution that truly helps their business.<br><br>📈 I'm energized by <strong>metrics and momentum</strong> — watching a pipeline grow, a deal progress through stages, and finally seeing the signature on the contract.<br><br>🌍 Working in the <strong>GCC/Dubai market</strong> excites me because of the sheer scale of industrial opportunity here. The UAE is a powerhouse, and I want to be part of its growth story.<br><br>Sales is not just a job for me — it's the sport I wake up to win every morning! 🏆`;
+
+      // --- LINKEDIN / SOCIAL ---
+      } else if (q.includes('linkedin') || q.includes('social') || q.includes('online') || q.includes('profile')) {
+        reply = `You can connect with me on LinkedIn and explore my full professional profile!<br><br>🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold underline">linkedin.com/in/tusharphulari303</a><br><br>My LinkedIn showcases my experience at Hoffmann Group India and Shreeji Marketing, my Scopus-indexed research publication, recommendations, and my MBA journey at Middlesex University Dubai.<br><br>📩 I respond to all connection requests and messages within 24 hours. Let's connect! 🤝`;
+
+      // --- AGE / YOUNG / EXPERIENCE LEVEL ---
+      } else if (q.includes('young') || q.includes('age') || q.includes('experience level') || q.includes('senior') || q.includes('junior') || q.includes('fresh') || q.includes('graduate')) {
+        reply = `At 23, I bring a rare combination of youth, energy, and real-world results!<br><br>⚡ <strong>Misconception:</strong> "Young" doesn't mean "inexperienced." In 1.5+ years at Hoffmann Group India, I managed full sales territories across multiple Indian regions independently.<br><br>🏆 <strong>Track record:</strong> 20% client growth, 40+ SQLs, 100%+ quota attainment — these are senior-level outcomes delivered at a junior-level cost.<br><br>📚 <strong>MBA in Progress:</strong> I'm investing in strategic business knowledge while actively delivering results — I'm building the full package in real time.<br><br>You get someone who brings fresh ideas, deep hunger to prove themselves, AND a proven track record. That's rare. Let's talk! 🚀`;
+
+      // --- PUBLICATIONS / RESEARCH ---
+      } else if (q.includes('publication') || q.includes('research') || q.includes('paper') || q.includes('scopus') || q.includes('iot') || q.includes('blockchain') || q.includes('jetir') || q.includes('neuroquantology')) {
+        reply = `I've authored and co-authored multiple peer-reviewed research publications!<br><br>🔬 <strong>Scopus-Indexed (Top-Tier):</strong><br>"Improving Security of IoT Devices Using Blockchain" — designed a decentralized consensus layer for firmware integrity verification on edge IoT gateways.<br><br>📄 <strong>JETIR Journal:</strong><br>"Police Database Management System" — secure RBAC-based crime logging and record retrieval system.<br><br>📄 <strong>NeuroQuantology Journal:</strong><br>"PMPL Transit Management System" — dynamic bus dispatch scheduling and passenger flow optimization.<br><br>Research has given me structured analytical thinking — I approach every sales territory like a scientific experiment: hypothesis, test, iterate, scale! 🎯`;
+
+      // --- INTERVIEW / MEET ---
+      } else if (q.includes('interview') || q.includes('meet') || q.includes('schedule') || q.includes('call') || q.includes('coffee') || q.includes('connect') || q.includes('talk')) {
+        reply = `I'd love to connect! Here's how to reach me:<br><br>📩 <strong>Email:</strong> <a href="mailto:tusharphulari303@gmail.com" class="text-indigo-600 dark:text-indigo-400 font-semibold">tusharphulari303@gmail.com</a><br>📱 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/918180071303" target="_blank" class="text-emerald-600 dark:text-emerald-400 font-semibold">+91 8180071303</a><br>🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold">linkedin.com/in/tusharphulari303</a><br><br>I'm based in <strong>Dubai, UAE</strong> and available for in-person meetings, video calls, or a quick coffee chat — whichever works best for you. I respond within 24 hours! ☕🌟`;
+
+      // --- LANGUAGE ---
+      } else if (q.includes('language') || q.includes('english') || q.includes('hindi') || q.includes('marathi') || q.includes('arabic') || q.includes('speak')) {
+        reply = `I'm proficient in multiple languages, which is a strong asset in the diverse Dubai/GCC market!<br><br>🌍 <strong>Languages I speak:</strong><br>• <strong>English</strong> — Professional/Business fluency (primary work language)<br>• <strong>Hindi</strong> — Native/Fluent<br>• <strong>Marathi</strong> — Native/Fluent<br><br>Working in Dubai has also exposed me to multi-cultural business environments, and I adapt my communication style naturally across different cultural contexts. Clear, persuasive communication is one of my strongest sales assets! 💬`;
+
+      // --- INDUSTRY KNOWLEDGE ---
+      } else if (q.includes('industry') || q.includes('industrial') || q.includes('manufacturing') || q.includes('b2b') || q.includes('market') || q.includes('sector') || q.includes('domain')) {
+        reply = `My domain expertise is in <strong>B2B Industrial Markets</strong> — and I bring both technical and commercial depth!<br><br>🏭 <strong>Industries I've Sold Into:</strong> Manufacturing, Heavy Fabrication, Industrial Cutting Tools &amp; Equipment, Automotive/EV, Engineering &amp; Process Plants<br><br>🌍 <strong>Markets I Know:</strong> West India (Maharashtra, MP), South India (Tamil Nadu, Kerala, Pondicherry), and now the <strong>UAE/GCC industrial market</strong><br><br>⚙️ My B.Tech in Instrumentation &amp; Control Engineering means I understand industrial systems from the inside out — a massive trust-builder with technical buyers and plant managers. I don't just sell; I consult and solve! 💡`;
+
+      // --- DEFAULT FALLBACK ---
+      } else {
+        reply = `Great question! I'm <strong>Tushar Sushil Phulari</strong> — a 23-year-old B2B Business Development Engineer based in Dubai, UAE, with 1.5+ years of proven industrial sales experience.<br><br>Here's a snapshot of who I am:<br>📈 20% territory growth at Hoffmann Group India<br>🎯 40+ SQLs in 4 months at Shreeji Marketing<br>🎓 MBA Marketing (Middlesex Dubai) + B.Tech Engineering (VIT Pune, 8.30 CGPA)<br>🔬 Scopus-indexed research author<br>🌍 Based in Dubai — available immediately!<br><br>Feel free to ask me anything — about my experience, skills, projects, salary expectations, or just schedule a chat! I'm an open book. 😊`;
       }
 
       renderAiChatReply(reply);
