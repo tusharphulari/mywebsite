@@ -133,51 +133,7 @@
   <!-- Interactive Pastel Fluid Marble Background Canvas -->
   <canvas id="fluid-canvas"></canvas>
 
-  <!-- Top Global Header -->
-  <header class="relative z-30 w-full px-4 sm:px-8 py-4 flex items-center justify-between">
-    <!-- Left: Back to Front Page Button & Talent Status Badge -->
-    <div class="flex items-center gap-2 sm:gap-3">
-      <!-- Back to Front Page Button (visible on subpages) -->
-      <button id="header-back-home-btn" onclick="showHeroView()" class="hidden items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200/90 dark:border-slate-800 shadow-sm text-xs sm:text-sm font-bold transition-all hover:scale-105 active:scale-95 group cursor-pointer" title="Back to Front Page">
-        <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-0.5 transition-transform text-indigo-600 dark:text-indigo-400"></i>
-        <span>Front Page</span>
-      </button>
-
-      <div class="flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <span class="relative flex h-2.5 w-2.5">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-        </span>
-        <span class="text-xs font-semibold text-slate-700 dark:text-slate-200 tracking-tight">Looking for a talent?</span>
-      </div>
-    </div>
-
-    <!-- Right Header Controls: LinkedIn, WhatsApp, Dark Mode, Home/Front Page -->
-    <div class="flex items-center gap-2 sm:gap-3">
-
-      <!-- LinkedIn Link -->
-      <a href="https://linkedin.com/in/tusharphulari303" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-slate-900/80 hover:bg-[#0077b5] hover:text-white text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md shadow-sm transition-all" title="LinkedIn Profile">
-        <i class="fa-brands fa-linkedin-in text-sm"></i>
-      </a>
-
-      <!-- WhatsApp Direct -->
-      <a href="https://wa.me/918180071303" target="_blank" rel="noopener noreferrer" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-slate-900/80 hover:bg-[#25D366] hover:text-white text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md shadow-sm transition-all" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp text-sm"></i>
-      </a>
-
-      <!-- Dark / Light Mode Toggle -->
-      <button id="theme-toggle-btn" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md shadow-sm transition-all cursor-pointer" title="Toggle Dark/Light Mode">
-        <i id="theme-icon" class="fa-regular fa-moon text-sm"></i>
-      </button>
-
-      <!-- Back to Front Page Home Button -->
-      <button id="reset-home-btn" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-slate-900/80 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md shadow-sm transition-all cursor-pointer" title="Back to Front Page">
-        <i class="fa-solid fa-house text-sm"></i>
-      </button>
-    </div>
-  </header>
-
-  <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 w-full max-w-4xl mx-auto pb-44">
+  <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 w-full max-w-4xl mx-auto pt-6 sm:pt-10 pb-44">
     
     <!-- 1. HERO VIEW (State when user lands on page) -->
     <div id="hero-view" class="w-full flex flex-col items-center text-center transition-all duration-500 ease-out">
@@ -218,15 +174,10 @@
     <!-- 2. INTERACTIVE CHAT & RICH CONTENT CONTAINER -->
     <div id="conversation-container" class="w-full hidden flex-col items-center space-y-6 pt-4 pb-2 transition-all duration-500">
       
-      <!-- Top Action Bar: Back to Front Page & Home Buttons -->
-      <div class="w-full flex items-center justify-between gap-3 max-w-2xl px-1">
+      <!-- Top Action Bar: Home Button on Right Side -->
+      <div class="w-full flex items-center justify-end max-w-2xl px-1">
         <button onclick="showHeroView()" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white/90 dark:bg-slate-900/90 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/90 dark:border-slate-800 shadow-sm text-xs sm:text-sm font-bold transition-all hover:scale-105 active:scale-95 group cursor-pointer" title="Back to Front Page">
-          <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform text-indigo-600 dark:text-indigo-400"></i>
-          <span>Back to Front Page</span>
-        </button>
-
-        <button onclick="showHeroView()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/80 dark:border-slate-800 text-xs font-semibold shadow-xs transition-all cursor-pointer hover:scale-105" title="Go to Front Page">
-          <i class="fa-solid fa-house text-xs text-indigo-500"></i>
+          <i class="fa-solid fa-house text-xs text-indigo-600 dark:text-indigo-400"></i>
           <span>Home</span>
         </button>
       </div>
@@ -264,13 +215,6 @@
       <!-- 5 Main Pill Categories Nav (Me, Experience, Projects, Skills, Contact) -->
       <div class="w-full overflow-x-auto no-scrollbar py-1">
         <div class="flex items-center justify-center gap-2 sm:gap-2.5 min-w-max mx-auto px-2">
-          <!-- Home / Front Page -->
-          <button id="nav-home-pill" data-category="home" onclick="showHeroView()" class="category-pill-btn flex items-center gap-2 bg-white/90 dark:bg-slate-900/90 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/90 dark:border-slate-800 px-4 py-2 rounded-2xl shadow-sm text-xs sm:text-sm font-semibold transition-all hover:scale-105 active:scale-95 cursor-pointer" title="Back to Front Page">
-            <span class="w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs">
-              <i class="fa-solid fa-house"></i>
-            </span>
-            <span>Home</span>
-          </button>
 
           <!-- Me -->
           <button data-category="me" class="category-pill-btn flex items-center gap-2 bg-white/90 dark:bg-slate-900/90 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/90 dark:border-slate-800 px-4 py-2 rounded-2xl shadow-sm text-xs sm:text-sm font-semibold transition-all hover:scale-105 active:scale-95">
@@ -335,6 +279,29 @@
 
     </div>
   </footer>
+
+  <!-- Floating Bottom-Right Controls Dock: LinkedIn, WhatsApp, Theme Toggle, Home Button -->
+  <aside id="bottom-right-dock" class="fixed bottom-24 sm:bottom-6 right-3 sm:right-6 z-30 flex items-center gap-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-1.5 sm:p-2 rounded-full border border-slate-200/80 dark:border-slate-800 shadow-xl transition-all hover:shadow-2xl">
+    <!-- LinkedIn Direct Link -->
+    <a href="https://linkedin.com/in/tusharphulari303" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100/90 dark:bg-slate-800/90 hover:bg-[#0077b5] hover:text-white text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 transition-all hover:scale-105 active:scale-95" title="LinkedIn Profile">
+      <i class="fa-brands fa-linkedin-in text-sm"></i>
+    </a>
+
+    <!-- WhatsApp Direct Link -->
+    <a href="https://wa.me/918180071303" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100/90 dark:bg-slate-800/90 hover:bg-[#25D366] hover:text-white text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 transition-all hover:scale-105 active:scale-95" title="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
+    </a>
+
+    <!-- Dark / Light Theme Toggle -->
+    <button id="theme-toggle-btn" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100/90 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 transition-all hover:scale-105 active:scale-95 cursor-pointer" title="Toggle Dark/Light Mode">
+      <i id="theme-icon" class="fa-regular fa-moon text-sm"></i>
+    </button>
+
+    <!-- Back to Front Page / Home Button -->
+    <button id="reset-home-btn" onclick="showHeroView()" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-indigo-50 dark:bg-indigo-950/70 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-400 border border-indigo-200/60 dark:border-indigo-800/60 transition-all hover:scale-105 active:scale-95 cursor-pointer" title="Back to Front Page">
+      <i class="fa-solid fa-house text-sm"></i>
+    </button>
+  </aside>
 
   <!-- Slide-up Drawer: Quick Questions Accordion Sheet (Exact match from video 00:48) -->
   <div id="quick-questions-drawer" class="fixed inset-x-0 bottom-0 z-40 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-2xl rounded-t-3xl max-h-[75vh] flex flex-col transform translate-y-full transition-transform duration-300 ease-out">
@@ -602,7 +569,7 @@
       name: "Tushar Sushil Phulari",
       headline: "Business Development Engineer - B2B Sales & Industrial Marketing",
       location: "Dubai, United Arab Emirates",
-      whatsapp: "+91 8180071303",
+      whatsapp: "+91\u00A08180071303",
       email: "tusharphulari303@gmail.com",
       linkedin: "https://linkedin.com/in/tusharphulari303",
       age: "23 years old",
@@ -902,21 +869,18 @@
     }
 
     // Reset View Button
-    document.getElementById('reset-home-btn').addEventListener('click', () => {
-      showHeroView();
-    });
+    const resetHomeBtn = document.getElementById('reset-home-btn');
+    if (resetHomeBtn) {
+      resetHomeBtn.addEventListener('click', () => {
+        showHeroView();
+      });
+    }
 
     function showHeroView() {
       currentView = 'hero';
       document.getElementById('hero-view').classList.remove('hidden');
       document.getElementById('conversation-container').classList.add('hidden');
       document.getElementById('conversation-container').classList.remove('flex');
-
-      const headerBackBtn = document.getElementById('header-back-home-btn');
-      if (headerBackBtn) {
-        headerBackBtn.classList.add('hidden');
-        headerBackBtn.classList.remove('flex');
-      }
 
       closeDrawer();
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -931,12 +895,6 @@
       const convCont = document.getElementById('conversation-container');
       convCont.classList.remove('hidden');
       convCont.classList.add('flex');
-
-      const headerBackBtn = document.getElementById('header-back-home-btn');
-      if (headerBackBtn) {
-        headerBackBtn.classList.remove('hidden');
-        headerBackBtn.classList.add('flex');
-      }
       
       const queryPill = document.getElementById('user-query-pill');
       queryPill.textContent = queryTitle;
@@ -1255,7 +1213,7 @@
                     <i class="fa-brands fa-whatsapp"></i>
                   </div>
                   <div>
-                    <span class="text-sm sm:text-base font-bold text-slate-900 dark:text-white block group-hover:text-emerald-600 transition-colors">${TUSHAR_PROFILE.whatsapp} (WhatsApp / Call)</span>
+                    <span class="text-sm sm:text-base font-bold text-slate-900 dark:text-white block group-hover:text-emerald-600 transition-colors whitespace-nowrap">${TUSHAR_PROFILE.whatsapp} (WhatsApp / Call)</span>
                     <span class="text-xs text-slate-400 dark:text-slate-500">Available for immediate calls and messages</span>
                   </div>
                 </div>
@@ -1296,7 +1254,7 @@
 
             <!-- Conversational message -->
             <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800 text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed shadow-sm">
-              You can reach me via email at <strong>${TUSHAR_PROFILE.email}</strong>, ping me directly on WhatsApp at <strong>${TUSHAR_PROFILE.whatsapp}</strong>, or connect with me on LinkedIn! I'm always open to discussing B2B industrial sales, strategic marketing, or key account roles here in Dubai/UAE. If you're building a high-performance territory team, let's talk! What kind of opportunities are you looking to fill? ✨
+              You can reach me via email at <strong class="whitespace-nowrap">${TUSHAR_PROFILE.email}</strong>, ping me directly on WhatsApp at <strong class="whitespace-nowrap">${TUSHAR_PROFILE.whatsapp}</strong>, or connect with me on LinkedIn! I'm always open to discussing B2B industrial sales, strategic marketing, or key account roles here in Dubai/UAE. If you're building a high-performance territory team, let's talk! What kind of opportunities are you looking to fill? ✨
             </div>
           </div>
         `;
@@ -1497,53 +1455,49 @@ Keep your response engaging, concise (1-3 paragraphs), formatted with clear poin
       loadingIndicator.classList.add('flex');
       contentArea.innerHTML = '';
 
-      // Smart routing: specific views for category-level questions
-      const lower = userQuery.toLowerCase();
+      const lower = userQuery.trim().toLowerCase();
 
-      // Experience / Work History → Rich experience card view
-      if ((lower.includes('experience') || lower.includes('work history') || lower.includes('internship') || lower.includes('hoffmann') || lower.includes('shreeji') || lower.includes('phoenix fab') || lower.includes('ohm automotive') || lower.includes('tsl consulting'))
-          && !lower.includes('why') && !lower.includes('how') && !lower.includes('what did you learn')) {
-        renderExperienceView();
-        return;
-      }
-
-      // Projects / Publications → Swipeable project cards view
-      if ((lower.includes('project') || lower.includes('projects'))
-          && !lower.includes('why') && !lower.includes('salary') && !lower.includes('hire')) {
+      // Explicit single-command navigation triggers (e.g. typing "projects", "experience", "skills", "contact")
+      // NOTE: Natural language questions and drawer quick questions flow through to generateFallbackResponse!
+      if (lower === 'projects' || lower === 'show projects' || lower === 'view projects' || lower === 'open projects') {
         renderProjectsView();
         return;
       }
-
-      // Skills → Skills badge view
-      if ((lower.includes('what are your skills') || lower.includes('list your skills') || lower.includes('show me your skills') || lower.includes('hard skills') || lower.includes('soft skills') || lower.includes('salesforce') || lower.includes('hubspot'))
-          && !lower.includes('why') && !lower.includes('hire')) {
+      if (lower === 'experience' || lower === 'work history' || lower === 'show experience' || lower === 'view experience') {
+        renderExperienceView();
+        return;
+      }
+      if (lower === 'skills' || lower === 'show skills' || lower === 'view skills') {
         renderSkillsView();
         return;
       }
-
-      // Contact → Contact view
-      if (lower.includes('how can i reach') || lower.includes('how to contact') || lower.includes('whatsapp') || lower.includes('your email') || lower.includes('your phone') || lower.includes('linkedin')) {
+      if (lower === 'contact' || lower === 'contact me' || lower === 'show contact') {
         renderContactView();
         return;
       }
 
-      // About Me → Me view
-      if (lower === 'tell me about yourself briefly.' || lower === 'who are you?' || lower === 'introduce yourself' || lower === 'who is tushar?') {
-        renderMeView();
-        return;
-      }
-
-      // Everything else → comprehensive smart fallback (handles 20+ question types)
+      // Every question (including all 15 questionnaire questions) receives a dedicated conversational AI response!
       generateFallbackResponse(userQuery);
     }
 
 
-    function renderAiChatReply(text) {
+    function renderAiChatReply(text, customButtonsHtml) {
       loadingIndicator.classList.add('hidden');
       loadingIndicator.classList.remove('flex');
 
       // Convert line breaks and simple formatting
       const formattedText = text.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+
+      const defaultButtons = `
+        <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+          Schedule a Chat in Dubai ☕
+        </button>
+        <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+          View Work Experience 💼
+        </button>
+      `;
+
+      const actionButtons = customButtonsHtml || defaultButtons;
 
       contentArea.innerHTML = `
         <div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 shadow-xl space-y-4">
@@ -1562,12 +1516,7 @@ Keep your response engaging, concise (1-3 paragraphs), formatted with clear poin
           </div>
 
           <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-2 text-xs">
-            <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
-              Schedule a Chat in Dubai
-            </button>
-            <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
-              View Work Experience
-            </button>
+            ${actionButtons}
           </div>
         </div>
       `;
@@ -1578,98 +1527,506 @@ Keep your response engaging, concise (1-3 paragraphs), formatted with clear poin
       loadingIndicator.classList.remove('flex');
 
       const q = query.toLowerCase();
-      let reply = `Thank you for asking! I'm <strong>Tushar Sushil Phulari</strong>, a 23-year-old B2B Business Development professional with 1.5+ years of hands-on industrial sales experience. I hold a B.Tech in Instrumentation &amp; Control Engineering and I'm currently pursuing my <strong>MBA in Marketing at Middlesex University Dubai</strong>. At Hoffmann Group India, I expanded territory clients by 20% and hit quota every quarter. I'm based in Dubai and ready to join immediately! 🚀 What would you like to know?`;
+      let reply = "";
+      let buttons = null;
 
-      // --- HIRE / VALUE ---
-      if (q.includes('why should') || q.includes('hire you') || q.includes('valuable') || q.includes('stand out') || q.includes('different') || q.includes('unique') || q.includes('best candidate')) {
-        reply = `Here's exactly why you should hire me:<br><br>🎯 <strong>Dual Expertise — Engineering + MBA:</strong> I speak the technical language of plant managers AND execute high-velocity B2B sales strategies. Very few candidates offer both.<br><br>📈 <strong>Proven, Measurable Results:</strong> 20% B2B territory growth at Hoffmann Group India, 40+ Sales Qualified Leads in 4 months at Shreeji Marketing, 100%+ quota attainment across consecutive quarters.<br><br>🌍 <strong>Dubai-Ready &amp; Available Immediately:</strong> I'm based in Dubai right now, with a strong understanding of the GCC industrial market.<br><br>🔬 <strong>Research-Backed Mindset:</strong> My Scopus-indexed publication on IoT Blockchain Security shows I bring analytical, structured thinking to every business challenge.<br><br>💼 <strong>CRM-First Approach:</strong> Salesforce, HubSpot, LinkedIn Sales Navigator — I build pipelines that don't leak. Ready to hit the ground running from Day 1!`;
+      // --- 1. SCOPUS-INDEXED RESEARCH PAPER (Drawer Question 8) ---
+      if (q.includes('scopus') || (q.includes('iot') && (q.includes('blockchain') || q.includes('security'))) || q.includes('security of iot') || (q.includes('research') && (q.includes('blockchain') || q.includes('iot')))) {
+        reply = `Here is the complete breakdown of my Scopus-indexed research paper:<br><br>
+📄 <strong>Paper Title:</strong> <em>"Improving Security of IoT Devices Using Blockchain"</em><br>
+🏛️ <strong>Indexing:</strong> <strong>Scopus-Indexed Research Publication</strong> (International Peer-Reviewed)<br>
+🔑 <strong>Core Domain:</strong> IoT Cybersecurity, Distributed Ledger Technology (DLT), Edge Gateways &amp; Smart Contracts<br><br>
+🎯 <strong>The Problem It Solves:</strong><br>
+Traditional IoT systems rely on centralized cloud servers for Over-The-Air (OTA) firmware deployments. A single compromised server allows malicious actors to execute Man-in-the-Middle (MITM) attacks and push tampered firmware across thousands of industrial sensors.<br><br>
+💡 <strong>My Technical Architecture &amp; Solution:</strong><br>
+• <strong>Decentralized Node Verification:</strong> Designed a distributed blockchain consensus mechanism where edge nodes cryptographically validate firmware integrity prior to installation.<br>
+• <strong>Smart Contract Hash Signatures:</strong> Implemented smart contracts storing immutable cryptographic hashes of authorized binaries, eliminating single-point vulnerabilities.<br>
+• <strong>Zero-Trust Architecture:</strong> Guarantees 100% tamper detection across distributed industrial sensor networks.<br><br>
+💼 <strong>How This Powers My B2B Sales Career:</strong><br>
+Publishing peer-reviewed research demonstrates deep analytical rigor, technical depth, and methodical problem solving. When pitching high-value industrial solutions to CTOs, Engineering Heads, and Plant Directors, this engineering credibility builds instant trust and accelerates deal cycles! 🚀`;
+        buttons = `
+          <button onclick="renderProjectsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Visual Projects Gallery 📁
+          </button>
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+        `;
 
-      // --- SALARY / EXPECTATIONS ---
+      // --- 2. OUTBOUND LEAD ENGINE & CRM WORKFLOW PROJECT (Drawer Question 9) ---
+      } else if (q.includes('outbound lead') || (q.includes('outbound') && (q.includes('crm') || q.includes('workflow') || q.includes('lead generation'))) || (q.includes('lead') && q.includes('engine')) || (q.includes('lead generation') && q.includes('workflow'))) {
+        reply = `Here are the details of my <strong>B2B Outbound Lead Engine &amp; CRM Pipeline</strong> project:<br><br>
+🚀 <strong>Project Objective:</strong> Architect a scalable, zero-leakage outbound prospecting engine targeting enterprise manufacturing decision-makers across West and South India.<br><br>
+📊 <strong>Measurable Business Results:</strong><br>
+• <strong>40+ Sales Qualified Leads (SQLs)</strong> generated in under 120 days at Shreeji Marketing Corporation.<br>
+• <strong>20% Regional Client Expansion:</strong> Scaled corporate manufacturing accounts across Maharashtra, MP, Tamil Nadu, and Kerala.<br>
+• <strong>25% Shorter Deal Cycles:</strong> Qualified prospects through structured ICP frameworks before passing to technical sales directors.<br><br>
+🛠️ <strong>The Tech Stack &amp; Workflow:</strong><br>
+• <strong>Prospecting:</strong> Precision account mapping using <strong>LinkedIn Sales Navigator</strong> boolean search filters for plant heads &amp; procurement directors.<br>
+• <strong>Multi-Touch Sequences:</strong> Structured 4-touch cadence (Cold Call → Value Email → LinkedIn Touch → Technical Follow-up).<br>
+• <strong>CRM Architecture:</strong> Automated pipeline staging, lead scoring, and activity tracking in <strong>Salesforce &amp; HubSpot</strong>.<br><br>
+💡 This project proves I don't just wait for inbound leads — I build proactive, high-velocity revenue pipelines from scratch! 📈`;
+        buttons = `
+          <button onclick="renderProjectsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Projects Gallery 📁
+          </button>
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+        `;
+
+      // --- 3. POLICE DATABASE MANAGEMENT SYSTEM (JETIR) ---
+      } else if (q.includes('police') || q.includes('jetir') || (q.includes('database') && q.includes('management'))) {
+        reply = `Here is the background on my <strong>Police Database Management System</strong> research project:<br><br>
+📄 <strong>Publication:</strong> Published in the <em>Journal of Emerging Technologies and Innovative Research (JETIR)</em><br>
+🛠️ <strong>Tech Stack:</strong> Relational SQL Databases, Role-Based Access Control (RBAC), PHP/Web Architecture<br><br>
+🎯 <strong>Key Features:</strong><br>
+• <strong>Secure Incident Logging:</strong> Real-time authenticated FIR (First Information Report) entry and tracking across precincts.<br>
+• <strong>RBAC Security:</strong> Strict granular permissions preventing unauthorized access to sensitive criminal records.<br>
+• <strong>Rapid Indexing:</strong> Optimized query architecture for sub-second retrieval of citizen complaints and crime pattern records.<br><br>
+💡 Demonstrates strong database design fundamentals, data integrity principles, and secure systems architecture! 🔒`;
+        buttons = `
+          <button onclick="renderProjectsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Visual Projects Gallery 📁
+          </button>
+        `;
+
+      // --- 4. PMPL TRANSIT MANAGEMENT (NeuroQuantology) ---
+      } else if (q.includes('pmpl') || q.includes('transit') || q.includes('neuroquantology')) {
+        reply = `Here is the overview of my <strong>PMPL Transit Management System</strong> publication:<br><br>
+📄 <strong>Publication:</strong> Published in <em>NeuroQuantology Journal</em><br>
+🛠️ <strong>Focus:</strong> Dynamic Fleet Dispatch Scheduling &amp; Urban Transit Optimization<br><br>
+🎯 <strong>Core Innovations:</strong><br>
+• <strong>Real-time Dispatching:</strong> Optimized public transit bus schedules based on dynamic passenger density patterns.<br>
+• <strong>Route Optimization:</strong> Algorithmic fleet redeployment to eliminate peak-hour passenger bottlenecks.<br>
+• <strong>Commuter Experience:</strong> Reduced average commuter wait times through synchronized timetable adjustments.<br><br>
+💡 Highlights my ability to apply quantitative optimization and data-driven logistics to complex real-world operational problems! 🚌`;
+        buttons = `
+          <button onclick="renderProjectsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Visual Projects Gallery 📁
+          </button>
+        `;
+
+      // --- 5. WHAT PROJECTS OR PUBLICATIONS ARE YOU MOST PROUD OF? (Drawer Question 7) ---
+      } else if (q.includes('proud of') || (q.includes('project') && (q.includes('proud') || q.includes('most proud'))) || (q.includes('publication') && (q.includes('proud') || q.includes('most proud')))) {
+        reply = `I take immense pride in projects that either pushed academic research boundaries or directly generated enterprise revenue:<br><br>
+🔬 <strong>1. Scopus-Indexed Research Paper (IoT Security Using Blockchain):</strong><br>
+Published in a top-tier peer-reviewed international journal. Designed a decentralized architecture with smart contracts to cryptographically secure Over-The-Air (OTA) firmware updates across edge IoT sensors, eliminating single-point vulnerabilities.<br><br>
+📈 <strong>2. B2B Outbound Lead Engine &amp; CRM Pipeline:</strong><br>
+Engineered an automated multi-touch outbound prospecting framework using LinkedIn Sales Navigator &amp; HubSpot, generating <strong>40+ Sales Qualified Leads (SQLs)</strong> in under 4 months and cutting sales cycles by 25%.<br><br>
+🚓 <strong>3. Police Database Management System (JETIR Journal):</strong><br>
+Published in the <em>Journal of Emerging Technologies and Innovative Research</em>. Architected an RBAC relational database for tamper-resistant real-time FIR incident logging.<br><br>
+🚌 <strong>4. PMPL Transit Management Optimization (NeuroQuantology):</strong><br>
+Published in <em>NeuroQuantology Journal</em>. Applied quantitative algorithms to optimize public bus dispatch timetables based on dynamic commuter density patterns.<br><br>
+💡 This blend of analytical engineering rigor and commercial execution allows me to add immediate value to any B2B team!`;
+        buttons = `
+          <button onclick="renderProjectsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Visual Projects Gallery 📁
+          </button>
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+        `;
+
+      // --- 6. GENERAL PUBLICATIONS & PROJECTS ---
+      } else if (q.includes('publication') || q.includes('research paper') || (q.includes('project') && (q.includes('what are') || q.includes('show') || q.includes('tell') || q.includes('list')))) {
+        reply = `I've published research in respected journals and engineered high-converting commercial sales pipelines:<br><br>
+🔬 <strong>1. Scopus-Indexed Publication:</strong> <em>"Improving Security of IoT Devices Using Blockchain"</em> — decentralized smart contract verification for industrial edge sensors.<br><br>
+📈 <strong>2. B2B Outbound Lead Engine:</strong> Multi-channel outbound cadence driving 40+ SQLs in 4 months at Shreeji Marketing.<br><br>
+📄 <strong>3. Police DBMS (JETIR Journal):</strong> Secure relational database with role-based access control.<br><br>
+🚌 <strong>4. Transit Management (NeuroQuantology):</strong> Mathematical fleet optimization reducing commuter wait times.<br><br>
+Click below to explore each project tile with full metrics and technical architecture! 📁`;
+        buttons = `
+          <button onclick="renderProjectsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Visual Projects Gallery 📁
+          </button>
+        `;
+
+      // --- 7. HOFFMANN GROUP EXPERIENCE & ACHIEVEMENTS (Drawer Question 12) ---
+      } else if (q.includes('hoffmann')) {
+        reply = `At <strong>Hoffmann Group India</strong> (Jan 2025 – May 2026), I served as a <strong>Business Development Engineer</strong> with full territory ownership:<br><br>
+📍 <strong>Territories Managed:</strong><br>
+• <strong>West Region:</strong> Maharashtra &amp; Madhya Pradesh<br>
+• <strong>South Region:</strong> Tamil Nadu, Kerala, Pondicherry<br><br>
+🏆 <strong>Key Achievements &amp; Measurable Impact:</strong><br>
+• <strong>20% Client Portfolio Growth:</strong> Expanded active B2B manufacturing and engineering client accounts through aggressive outbound acquisition and relationship expansion.<br>
+• <strong>Consistent Quota Attainment:</strong> Achieved consecutive quarter-over-quarter quota attainment across all assigned territories.<br>
+• <strong>On-Site Technical Demonstrations:</strong> Conducted live technical demonstrations of industrial cutting tools directly on client factory shop floors for plant managers and tooling engineers.<br>
+• <strong>Solution Engineering:</strong> Analyzed machining cycles, wear rates, and tolerances to recommend tooling packages, shortening customer production times.<br>
+• <strong>Smooth Regional Transition:</strong> Completed seamless account handovers before relocating to Dubai for my MBA studies.<br><br>
+I am ready to bring this exact territory ownership and revenue drive to your UAE operations! 🚀`;
+        buttons = `
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            Open Experience Details 💼
+          </button>
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+        `;
+
+      // --- 8. SHREEJI MARKETING SALES INTERNSHIP (Drawer Question 13) ---
+      } else if (q.includes('shreeji')) {
+        reply = `At <strong>Shreeji Marketing Corporation</strong> (May 2024 – Oct 2024), I worked as a <strong>Technical &amp; Sales Intern</strong> focused on end-to-end outbound pipeline generation:<br><br>
+🎯 <strong>Key Achievements &amp; Contributions:</strong><br>
+• <strong>40+ Sales Qualified Leads (SQLs):</strong> Generated over 40 high-intent SQLs in just 4 months through targeted outreach.<br>
+• <strong>Multi-Touch Outreach:</strong> Executed structured outbound sequences (Cold Calling, personalized emails, and LinkedIn Sales Navigator touchpoints) targeting manufacturing executives.<br>
+• <strong>CRM Pipeline Automation:</strong> Built and automated lead-tracking workflows in HubSpot, preventing lead leakage and establishing disciplined follow-ups.<br>
+• <strong>Technical Discovery Calls:</strong> Conducted initial qualification calls to understand engineering specifications before looping in senior sales directors.<br>
+• <strong>Proposal Formulation:</strong> Assisted leadership in drafting competitive commercial proposals and technical comparisons.<br><br>
+This role cemented my ability to build high-converting sales pipelines from cold outreach! 💪`;
+        buttons = `
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            Open Experience Details 💼
+          </button>
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+        `;
+
+      // --- 9. OTHER COMPANIES (PHOENIX FAB / OHM / TSL) ---
+      } else if (q.includes('phoenix') || q.includes('ohm') || q.includes('tsl')) {
+        reply = `Here is a brief snapshot of my industrial internships:<br><br>
+🏭 <strong>Phoenix Fab Industries (Fabrication Intern):</strong> Handled client coordination, requirement gathering, and technical drawing alignment for heavy industrial heating furnace casings valued at INR 50+ Lakhs; reduced design turnaround by 15%.<br><br>
+⚡ <strong>OHM Automotive (R&amp;D Intern):</strong> Tested EV two-wheeler telemetry data, evaluated battery performance metrics, and improved system testing efficiency by 10%.<br><br>
+📊 <strong>TSL Consulting (Consulting Intern):</strong> Analyzed client business processes, mapped enterprise accounts, and streamlined management reporting by 12%.<br><br>
+Every role added deep practical grounding to my consultative B2B skill set!`;
+        buttons = `
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View All Experience Cards 💼
+          </button>
+        `;
+
+      // --- 10. CRM SOFTWARE & SALES INTELLIGENCE TOOLS (Drawer Question 11) ---
+      } else if (q.includes('crm software') || q.includes('sales intelligence tools') || (q.includes('crm') && (q.includes('software') || q.includes('tool') || q.includes('know') || q.includes('use')))) {
+        reply = `I treat CRM and sales intelligence platforms as the operational engine of every high-performing revenue pipeline:<br><br>
+📊 <strong>1. Salesforce CRM:</strong><br>
+• Full opportunity lifecycle tracking, pipeline stage gates, and territory account management.<br>
+• Accurate sales forecasting, revenue reporting, and custom dashboard visibility for leadership.<br><br>
+🧲 <strong>2. HubSpot CRM:</strong><br>
+• Automated multi-touch email cadences and reminder task sequences.<br>
+• Lead scoring (MQL to SQL criteria) and zero-leakage workflow automation.<br>
+• Activity tracking, email open/click engagement analytics.<br><br>
+🔍 <strong>3. LinkedIn Sales Navigator:</strong><br>
+• Advanced Boolean search strings to identify economic buyers, plant heads, and procurement directors.<br>
+• Enterprise account mapping (identifying champions, blockers, and C-level sponsors).<br>
+• Personalized InMail messaging strategies yielding above-average response rates.<br><br>
+💡 I maintain rigorous CRM data hygiene because clean data equals reliable forecasting and higher conversion rates! 🚀`;
+        buttons = `
+          <button onclick="renderSkillsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View All Skills &amp; Tools 🛠️
+          </button>
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+        `;
+
+      // --- 11. CORE SALES AND TECHNICAL SKILLS (Drawer Question 10) ---
+      } else if (q.includes('core sales and technical skills') || (q.includes('sales') && q.includes('technical skills')) || (q.includes('sales & technical') || q.includes('sales and technical')) || (q.includes('what are your') && q.includes('skills')) || q.includes('hard skills') || q.includes('soft skills') || (q.includes('skill') && !q.includes('why'))) {
+        reply = `My skill set brings a rare harmony between technical engineering acumen and commercial sales execution:<br><br>
+💼 <strong>B2B Industrial Sales &amp; Pipeline:</strong><br>
+• Regional Territory Management &amp; B2B Expansion (West &amp; South India experience)<br>
+• High-Activity Outbound Prospecting &amp; Cold Outreach<br>
+• Consultative Solution Selling &amp; Shop-Floor Product Demonstrations<br>
+• Contract Negotiation, Account Retention &amp; Quota Attainment<br><br>
+⚙️ <strong>Engineering &amp; Technical Acumen:</strong><br>
+• Instrumentation &amp; Control Engineering (Sensors, Transducers, Industrial Automation)<br>
+• Precision Cutting Tool Technology &amp; Machining Applications<br>
+• Heavy Fabrication Drawing Interpretation (INR 50+ Lakh Furnace Casings)<br>
+• EV Telemetry &amp; R&amp;D Testing Protocols<br><br>
+🛠️ <strong>CRM &amp; Sales Intelligence:</strong><br>
+• Salesforce CRM, HubSpot CRM, LinkedIn Sales Navigator, Pipeline Architecture<br><br>
+🎨 <strong>Design &amp; Emerging Tech:</strong><br>
+• Google UX Design Professional Certificate (Figma, user journey workflows)<br>
+• Prompt Engineering &amp; AI Sales Automation<br>
+• Scopus-published research in IoT Security &amp; Blockchain<br><br>
+This combination means I build instant technical credibility with engineers and close high-value deals with commercial executives! 🌟`;
+        buttons = `
+          <button onclick="renderSkillsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Interactive Skills Badges 🛠️
+          </button>
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+        `;
+
+      // --- 12. WHY SHOULD AN MNC IN DUBAI HIRE YOU? (Drawer Question 5) ---
+      } else if (q.includes('why should an mnc') || (q.includes('hire you') && (q.includes('mnc') || q.includes('dubai'))) || (q.includes('why should') && q.includes('hire'))) {
+        reply = `Here is why an MNC in Dubai should hire me for Business Development:<br><br>
+🎯 <strong>1. Unique Dual Competence (Engineering + MBA):</strong><br>
+Most sales reps struggle with technical engineering specs, while most engineers struggle with commercial closing. Holding a B.Tech in Instrumentation &amp; Control and pursuing an MBA in Marketing at Middlesex University Dubai, I speak the language of plant directors AND deliver high-margin commercial agreements.<br><br>
+📈 <strong>2. Proven Track Record at a Global MNC:</strong><br>
+At <strong>Hoffmann Group India</strong> (German tooling MNC), I managed expansive territories across West and South India, grew our B2B account base by <strong>20%</strong>, and achieved consecutive quarter-over-quarter quota attainment.<br><br>
+⚡ <strong>3. Self-Sufficient Outbound Engine:</strong><br>
+I don't wait for inbound leads. At Shreeji Marketing, I delivered <strong>40+ SQLs in 4 months</strong> via proactive prospecting using LinkedIn Sales Navigator and CRM automations.<br><br>
+🌍 <strong>4. Based in Dubai &amp; Ready Immediately:</strong><br>
+I am already residing in Dubai, available with <strong>zero notice period</strong>, and ready to start generating revenue for your team from Day 1! 🚀`;
+        buttons = `
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+        `;
+
+      // --- 13. VALUABLE TEAM MEMBER (Drawer Question 3) ---
+      } else if (q.includes('valuable team member') || q.includes('valuable asset') || (q.includes('valuable') && (q.includes('team') || q.includes('company')))) {
+        reply = `What makes me a standout team member is my blend of technical credibility, proactive accountability, and collaborative energy:<br><br>
+🤝 <strong>1. Cross-Functional Bridge:</strong><br>
+I bridge technical teams and commercial stakeholders seamlessly. Because of my engineering background, technical leads and shop-floor managers trust my recommendations, speeding up deal approval.<br><br>
+📊 <strong>2. Rigorous Accountability &amp; Quota Discipline:</strong><br>
+At Hoffmann Group India, I consistently hit and exceeded quarterly targets, growing client accounts by 20%. I take complete ownership of pipeline numbers and deliver under pressure.<br><br>
+⚡ <strong>3. Pipeline Builder Mentality:</strong><br>
+I don't rely solely on marketing leads. I build outbound funnels from scratch (generating 40+ SQLs in 4 months at Shreeji) and ensure zero CRM pipeline leakage.<br><br>
+🏆 <strong>4. Leadership &amp; High Work Ethic:</strong><br>
+As a National Gold Medalist, Rajya Puraskar Scout, and NCC Cadet, discipline, teamwork, and resilience are ingrained in everything I do.<br><br>
+🌍 <strong>5. Dubai-Based &amp; Ready to Hit the Ground Running:</strong><br>
+Available immediately with zero notice period to support your regional growth! 🌟`;
+        buttons = `
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+        `;
+
+      // --- 14. CURRENT LOCATION & IMMEDIATE AVAILABILITY (Drawer Question 4) ---
+      } else if (q.includes('where are you currently located and are you available') || q.includes('available to join immediately') || (q.includes('currently located') && q.includes('available')) || (q.includes('availability') && (q.includes('immediate') || q.includes('join')))) {
+        reply = `📍 <strong>Location:</strong> I am currently living in <strong>Dubai, United Arab Emirates</strong>.<br><br>
+⚡ <strong>Availability:</strong> I am available to join <strong>IMMEDIATELY with ZERO notice period</strong>.<br><br>
+🎓 <strong>Current Academic Status:</strong> I am pursuing my <strong>MBA in Marketing at Middlesex University Dubai</strong>, which allows me full flexibility to take on a full-time Business Development or Technical Sales role in the UAE.<br><br>
+💼 <strong>Ready for Immediate Deployment:</strong><br>
+• All educational documents, certifications, and background references are ready.<br>
+• Available for in-person interviews and office meetings anywhere in Dubai or Abu Dhabi on short notice.<br>
+• Ready to make an immediate impact from Day 1! 🚀`;
+        buttons = `
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+        `;
+
+      // --- 15. WHERE ARE YOU LOCATED IN DUBAI? (Drawer Question 15) ---
+      } else if (q.includes('located in dubai') || q.includes('where are you located in dubai') || (q.includes('where') && q.includes('in dubai') && !q.includes('hire')) || q === 'where are you located?' || q === 'where are you located') {
+        reply = `📍 <strong>My Dubai Location &amp; Accessibility:</strong><br><br>
+• I am currently residing in <strong>Dubai, United Arab Emirates</strong>.<br>
+• I study at <strong>Middlesex University Dubai</strong> located in <strong>Dubai Knowledge Park</strong>, giving me central accessibility across key business districts including Dubai Media City, Internet City, Dubai Marina, Business Bay, DIFC, Al Quoz, and JAFZA.<br>
+• I am available for immediate in-person meetings, client presentations, or a quick coffee discussion anywhere across Dubai, Sharjah, or Abu Dhabi.<br><br>
+Feel free to message me on WhatsApp at <strong class="whitespace-nowrap">+91&nbsp;8180071303</strong> to arrange a meet-up! ☕`;
+        buttons = `
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            Contact Details 📱
+          </button>
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+        `;
+
+      // --- 16. HOW CAN I REACH YOU? WHAT ROLE WOULD MAKE YOU SAY 'YES' IMMEDIATELY? (Drawer Question 14) ---
+      } else if (q.includes('say \'yes\' immediately') || q.includes('say yes immediately') || (q.includes('reach you') && (q.includes('role') || q.includes('yes') || q.includes('immediately')))) {
+        reply = `I am actively interviewing and ready to take on my next high-impact challenge! Here is how to reach me and what I am looking for:<br><br>
+📞 <strong>Direct Contact Channels:</strong><br>
+• 📱 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/918180071303" target="_blank" class="text-emerald-600 dark:text-emerald-400 font-bold whitespace-nowrap">+91&nbsp;8180071303</a><br>
+• 📩 <strong>Email:</strong> <a href="mailto:tusharphulari303@gmail.com" class="text-indigo-600 dark:text-indigo-400 font-bold whitespace-nowrap">tusharphulari303@gmail.com</a><br>
+• 🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-blue-600 dark:text-blue-400 font-bold whitespace-nowrap">linkedin.com/in/tusharphulari303</a><br>
+• 📍 <strong>Location:</strong> Dubai, UAE (Available for in-person meetings anytime)<br><br>
+🎯 <strong>The Role That Would Make Me Say 'YES' Immediately:</strong><br>
+• <strong>Positions:</strong> Business Development Engineer, Technical Sales Executive, Key Account Manager, or Territory BDR.<br>
+• <strong>Industries:</strong> Industrial Equipment &amp; Tooling, Engineering &amp; Automation, Process Industries, IoT &amp; Industrial Tech, or B2B Enterprise Solutions.<br>
+• <strong>Company Culture:</strong> An ambitious team expanding in the UAE / GCC that values proactive prospecting, technical solution selling, and revenue ownership.<br>
+• <strong>Availability:</strong> <strong>Immediate (Zero Notice Period)</strong>! 🚀`;
+        buttons = `
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            Open Contact Page 📱
+          </button>
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+        `;
+
+      // --- 17. EDUCATIONAL BACKGROUND AND QUALIFICATIONS (Drawer Question 6) ---
+      } else if (q.includes('educational background') || q.includes('qualifications') || (q.includes('education') && (q.includes('background') || q.includes('qualification') || q.includes('degree') || q.includes('what')))) {
+        reply = `My educational background combines technical engineering discipline with strategic business and marketing leadership:<br><br>
+🎓 <strong>1. Master of Business Administration (MBA) in Marketing</strong><br>
+• <strong>University:</strong> Middlesex University Dubai, UAE<br>
+• <strong>Timeline:</strong> 2026 – Present (In Progress)<br>
+• <strong>Focus:</strong> Strategic B2B Marketing, Key Account Management, Go-to-Market Execution &amp; GCC Trade.<br><br>
+⚙️ <strong>2. Bachelor of Technology (B.Tech) in Instrumentation &amp; Control Engineering</strong><br>
+• <strong>College:</strong> Vishwakarma Institute of Technology (VIT), Pune<br>
+• <strong>Graduation:</strong> 2025 | <strong>CGPA:</strong> 8.30 / 10.0<br>
+• <strong>Core Focus:</strong> Industrial Automation, Process Control Systems, IoT &amp; Embedded Sensors, Data Acquisition.<br><br>
+📜 <strong>Professional Certifications:</strong><br>
+• Google UX Design Professional Certificate<br>
+• IT Security Specialist<br>
+• Prompt Engineering &amp; AI Applications<br><br>
+🏆 <strong>Honors:</strong> National Gold Medalist, Rajya Puraskar Scout Governor's Award, NCC 'A' Certificate.<br><br>
+This combination gives me technical credibility on the factory floor and commercial negotiation power in the boardroom! 🚀`;
+        buttons = `
+          <button onclick="renderSkillsView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Technical Skills 🛠️
+          </button>
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+        `;
+
+      // --- 18. CAN I SEE YOUR RESUME? (Drawer Question 2) ---
+      } else if (q.includes('resume') || q.includes('cv') || q.includes('download')) {
+        reply = `Here is an executive snapshot of my professional resume:<br><br>
+📄 <strong>Executive Summary:</strong><br>
+• <strong>Role:</strong> B2B Business Development Engineer | Industrial Technical Sales<br>
+• <strong>Status:</strong> Based in Dubai, UAE | <strong>Available Immediately (0 Notice Period)</strong><br>
+• <strong>Education:</strong> MBA in Marketing (Middlesex University Dubai) + B.Tech in Instrumentation &amp; Control Engineering (VIT Pune, 8.30 CGPA)<br>
+• <strong>Track Record:</strong> 1.5+ years B2B sales at Hoffmann Group India (20% territory growth, 100%+ quota attainment) &amp; Shreeji Marketing (40+ SQLs in 4 months)<br>
+• <strong>Publications:</strong> Scopus-Indexed author on IoT Security using Blockchain + 2 journal papers<br>
+• <strong>Certifications:</strong> Google UX Design, IT Security Specialist, Prompt Engineering<br>
+• <strong>Distinctions:</strong> National Gold Medalist, Rajya Puraskar Scout Award, NCC 'A' Certificate<br><br>
+📩 <strong>Direct CV Request:</strong><br>
+To receive my full PDF CV formatted for HR and hiring managers, reach me directly at <strong class="whitespace-nowrap">tusharphulari303@gmail.com</strong> or WhatsApp <strong class="whitespace-nowrap">+91&nbsp;8180071303</strong>!`;
+        buttons = `
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            Contact for Full PDF CV 📄
+          </button>
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+        `;
+
+      // --- 19. TELL ME ABOUT YOURSELF BRIEFLY / WHO ARE YOU? (Drawer Question 1) ---
+      } else if (q.includes('yourself') || q.includes('who are you') || q.includes('introduce') || q.includes('about you') || q.includes('who is tushar') || q === 'who are you?' || q === 'who are you') {
+        reply = `I am <strong>Tushar Sushil Phulari</strong> — a 23-year-old <strong>Business Development Engineer</strong> based in Dubai, UAE, who bridges the gap between deep technical engineering and high-velocity commercial B2B sales.<br><br>
+⚙️ <strong>Technical Foundation:</strong> I hold a B.Tech in Instrumentation &amp; Control Engineering from VIT Pune (CGPA: 8.30), giving me deep credibility with plant managers, technical directors, and engineering buyers.<br><br>
+🎓 <strong>Commercial Acumen:</strong> I am currently advancing my business acumen through an <strong>MBA in Marketing at Middlesex University Dubai</strong>.<br><br>
+💼 <strong>Proven Sales Track Record:</strong> At <strong>Hoffmann Group India</strong>, I expanded our B2B industrial account base by <strong>20%</strong> across West and South India and achieved consecutive quarterly quota targets. At Shreeji Marketing Corporation, I generated <strong>40+ Sales Qualified Leads (SQLs)</strong> in just 4 months.<br><br>
+🔬 <strong>Research Rigor:</strong> Published author in a <strong>Scopus-indexed journal</strong> for my research on IoT Security &amp; Blockchain.<br><br>
+🌍 I am currently in Dubai and available to join <strong>immediately with zero notice period</strong>. Ready to create immediate revenue impact! 🚀`;
+        buttons = `
+          <button onclick="renderExperienceView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+            View Work Experience 💼
+          </button>
+          <button onclick="renderProjectsView()" class="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold transition-colors">
+            View Projects Gallery 📁
+          </button>
+          <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold transition-colors">
+            Schedule a Chat in Dubai ☕
+          </button>
+        `;
+
+      // --- 20. SALARY / COMPENSATION EXPECTATIONS ---
       } else if (q.includes('salary') || q.includes('expectation') || q.includes('package') || q.includes('compensation') || q.includes('ctc') || q.includes('pay')) {
-        reply = `I'm open to discussing a competitive compensation package that reflects the value I bring — consistent quota attainment, territory expansion, and strong CRM execution. I'm targeting market-rate Business Development roles in Dubai/UAE, and I'm flexible for the right opportunity with growth potential. Let's have a direct conversation — reach me on WhatsApp at <strong>+91 8180071303</strong> or email <strong>tusharphulari303@gmail.com</strong>!`;
+        reply = `I'm open to discussing a competitive compensation package that reflects the value I bring — consistent quota attainment, territory expansion, and strong CRM execution. I'm targeting market-rate Business Development roles in Dubai/UAE, and I'm flexible for the right opportunity with growth potential. Let's have a direct conversation — reach me on WhatsApp at <strong class="whitespace-nowrap">+91&nbsp;8180071303</strong> or email <strong class="whitespace-nowrap">tusharphulari303@gmail.com</strong>!`;
 
-      // --- RESUME / CV ---
-      } else if (q.includes('resume') || q.includes('cv') || q.includes('portfolio') || q.includes('download')) {
-        reply = `You can review my complete background right here on this interactive portfolio! Key highlights:<br><br>📋 <strong>1.5+ Years</strong> at Hoffmann Group India — 20% territory growth, consecutive quota attainment<br>🎯 <strong>40+ SQLs</strong> in 4 months at Shreeji Marketing Corporation<br>🔬 <strong>Scopus-indexed research</strong> on IoT Blockchain Security<br>🎓 <strong>B.Tech Instrumentation &amp; Control</strong> (CGPA 8.30) + MBA Marketing (Middlesex University Dubai)<br><br>📩 For my full PDF CV, reach me directly: <strong>tusharphulari303@gmail.com</strong> or WhatsApp <strong>+91 8180071303</strong>`;
-
-      // --- LOCATION / AVAILABILITY ---
+      // --- 21. GENERAL LOCATION & AVAILABILITY ---
       } else if (q.includes('where') || q.includes('located') || q.includes('location') || q.includes('available') || q.includes('availability') || q.includes('join') || q.includes('notice') || q.includes('when can')) {
         reply = `I am currently <strong>based in Dubai, United Arab Emirates</strong> and available to join <strong>immediately</strong> — zero notice period required. I'm pursuing my MBA in Marketing at Middlesex University Dubai while actively seeking full-time Business Development, Sales, or Industrial Marketing roles across the UAE. Dubai/GCC is my home right now, and I'm ready to hit the ground running from Day 1! 📍`;
 
-      // --- EDUCATION ---
-      } else if (q.includes('education') || q.includes('degree') || q.includes('university') || q.includes('college') || q.includes('qualification') || q.includes('mba') || q.includes('btech') || q.includes('study') || q.includes('studied') || q.includes('cgpa') || q.includes('grade')) {
-        reply = `My educational background combines technical depth with business strategy:<br><br>🎓 <strong>MBA in Marketing</strong> — Middlesex University Dubai (2026–Present, In Progress)<br>⚙️ <strong>B.Tech in Instrumentation &amp; Control Engineering</strong> — Vishwakarma Institute of Technology (VIT), Pune | CGPA: 8.30 (2025)<br><br>This combination is rare and powerful — I can walk into a manufacturing plant, understand the engineering specs, and still close the commercial deal. It's what makes me a unique asset for any B2B industrial sales or business development team! 🚀`;
+      // --- 22. GENERAL EDUCATION ---
+      } else if (q.includes('education') || q.includes('degree') || q.includes('university') || q.includes('college') || q.includes('mba') || q.includes('btech') || q.includes('study') || q.includes('studied') || q.includes('cgpa')) {
+        reply = `My educational background combines technical depth with business strategy:<br><br>
+🎓 <strong>MBA in Marketing</strong> — Middlesex University Dubai (2026–Present, In Progress)<br>
+⚙️ <strong>B.Tech in Instrumentation &amp; Control Engineering</strong> — Vishwakarma Institute of Technology (VIT), Pune | CGPA: 8.30 (2025)<br><br>
+This combination is rare and powerful — I can walk into a manufacturing plant, understand engineering specs, and still close the commercial deal. It's what makes me a unique asset for any B2B industrial sales or business development team! 🚀`;
 
-      // --- CERTIFICATIONS / AWARDS ---
-      } else if (q.includes('certif') || q.includes('award') || q.includes('achievement') || q.includes('medal') || q.includes('ncc') || q.includes('scout') || q.includes('google ux')) {
-        reply = `I'm proud of both my professional certifications and personal achievements!<br><br>📜 <strong>Certifications:</strong><br>• Google UX Design Professional Certificate<br>• IT Security Specialist<br>• Prompt Engineering Skills<br><br>🏆 <strong>Awards &amp; Recognition:</strong><br>• <strong>National Gold Medalist</strong> — Academic Excellence<br>• <strong>Rajya Puraskar Scout Governor's Award</strong> — Leadership &amp; Community Service<br>• <strong>NCC 'A' Certificate</strong> — Discipline &amp; National Service<br><br>These recognitions reflect my commitment to excellence in everything I pursue! 🌟`;
-
-      // --- HOFFMANN GROUP ---
-      } else if (q.includes('hoffmann') || q.includes('cutting tool') || q.includes('west region') || q.includes('south region') || q.includes('maharashtra') || q.includes('tamil nadu')) {
-        reply = `At <strong>Hoffmann Group India</strong> (Jan 2025 – May 2026), I served as a <strong>Business Development Engineer</strong> with full ownership of B2B territory sales:<br><br>📍 <strong>Regions Managed:</strong> West Region (Maharashtra &amp; Madhya Pradesh) → South Region (Tamil Nadu, Pondicherry, Kerala)<br>📈 <strong>20% client portfolio growth</strong> through outbound prospecting, inbound qualification, and full-cycle deal closing<br>🔧 Delivered on-site technical cutting tool demonstrations to plant managers and engineering teams<br>🏆 Achieved <strong>100%+ quota attainment</strong> across consecutive quarters<br>🤝 Resigned in May 2026 after leading a smooth regional transition; now available immediately in Dubai!`;
-
-      // --- SHREEJI MARKETING ---
-      } else if (q.includes('shreeji') || q.includes('sql') || q.includes('lead generation') || q.includes('outbound') || q.includes('cold call') || q.includes('prospecting')) {
-        reply = `At <strong>Shreeji Marketing Corporation</strong> (May–Oct 2024), I worked as a <strong>Technical &amp; Sales Intern</strong> focused on outbound lead generation:<br><br>🎯 Generated <strong>40+ Sales Qualified Leads (SQLs)</strong> in just 4 months<br>📞 Ran structured cold outreach sequences via phone, email, and LinkedIn Sales Navigator targeting B2B manufacturing decision-makers<br>🔄 Architected <strong>automated CRM lead-tracking workflows</strong> to ensure zero pipeline leakage<br>📋 Partnered with technical sales directors to prepare tailored commercial proposals<br><br>This internship taught me to build pipelines from scratch — a skill I bring to every role I take on! 💪`;
-
-      // --- SKILLS / TOOLS ---
-      } else if (q.includes('salesforce') || q.includes('hubspot') || q.includes('linkedin') || q.includes('navigator') || q.includes('tool') || q.includes('software') || q.includes('crm')) {
-        reply = `I'm proficient in a full stack of B2B sales tools:<br><br>🛠️ <strong>CRM &amp; Sales Intelligence:</strong><br>• Salesforce CRM — Pipeline management &amp; opportunity tracking<br>• HubSpot — Lead nurturing &amp; workflow automation<br>• LinkedIn Sales Navigator — Precision B2B prospecting<br>• Lead Qualification Workflows &amp; Discovery Call frameworks<br><br>⚙️ <strong>Engineering &amp; Technical Domain:</strong> Instrumentation &amp; Control systems, product demonstrations, industrial cutting tools, heavy fabrication<br><br>🎨 <strong>Design &amp; Emerging Tech:</strong> Google UX Design, Prompt Engineering, IoT Architecture, Blockchain Fundamentals<br><br>I don't just know these tools — I've used them in real-world, high-pressure B2B environments to generate revenue! 🚀`;
-
-      // --- STRENGTHS ---
+      // --- 23. STRENGTHS ---
       } else if (q.includes('strength') || q.includes('good at') || q.includes('best at') || q.includes('superpower') || q.includes('expert')) {
-        reply = `My greatest strengths that directly translate to business results:<br><br>💡 <strong>Technical-Commercial Bridge:</strong> I can explain complex industrial products in business language — and close the deal.<br><br>🔥 <strong>High-Activity Prospecting:</strong> Cold calling, multi-touch email sequences, LinkedIn outreach — I know how to build pipeline from zero.<br><br>🎯 <strong>Quota Execution:</strong> At Hoffmann Group, I didn't just meet targets — I exceeded them consecutively for 5+ quarters.<br><br>🤝 <strong>Relationship Building:</strong> I build long-term, trust-based client relationships — not one-time transactional deals.<br><br>📊 <strong>CRM Discipline:</strong> I keep pipelines clean, accurate, and actionable. No leads fall through the cracks on my watch!`;
+        reply = `My greatest strengths that directly translate to business results:<br><br>
+💡 <strong>Technical-Commercial Bridge:</strong> I can explain complex industrial products in business language — and close the deal.<br><br>
+🔥 <strong>High-Activity Prospecting:</strong> Cold calling, multi-touch email sequences, LinkedIn outreach — I know how to build pipeline from zero.<br><br>
+🎯 <strong>Quota Execution:</strong> At Hoffmann Group, I didn't just meet targets — I exceeded them consecutively for quarters.<br><br>
+🤝 <strong>Relationship Building:</strong> I build long-term, trust-based client relationships — not one-time transactional deals.<br><br>
+📊 <strong>CRM Discipline:</strong> I keep pipelines clean, accurate, and actionable. No leads fall through the cracks on my watch!`;
 
-      // --- WEAKNESSES ---
+      // --- 24. WEAKNESSES / IMPROVEMENT ---
       } else if (q.includes('weakness') || q.includes('improve') || q.includes('challenge') || q.includes('work on') || q.includes('fail')) {
-        reply = `Great question! I believe in honest self-awareness:<br><br>🔄 <strong>Area I'm Actively Improving:</strong> Early in my career, I sometimes spent too much time perfecting proposals instead of sending them faster. I've since adopted a "good-enough-to-send, iterate-from-feedback" approach that's made me significantly more productive.<br><br>📚 <strong>Current Growth Focus:</strong> I'm deepening my understanding of strategic account management and enterprise-level B2B deal structures through my MBA at Middlesex University Dubai.<br><br>I believe every weakness is just a skill in development — and I bring the same discipline to self-improvement that I bring to hitting sales quotas! 💪`;
+        reply = `Great question! I believe in honest self-awareness:<br><br>
+🔄 <strong>Area I'm Actively Improving:</strong> Early in my career, I sometimes spent too much time perfecting proposals instead of sending them faster. I've since adopted a "good-enough-to-send, iterate-from-feedback" approach that's made me significantly more productive.<br><br>
+📚 <strong>Current Growth Focus:</strong> I'm deepening my understanding of strategic account management and enterprise-level B2B deal structures through my MBA at Middlesex University Dubai.<br><br>
+I believe every weakness is just a skill in development — and I bring the same discipline to self-improvement that I bring to hitting sales quotas! 💪`;
 
-      // --- 5-YEAR PLAN / GOALS ---
-      } else if (q.includes('5 year') || q.includes('five year') || q.includes('future') || q.includes('goal') || q.includes('aspiration') || q.includes('plan') || q.includes('ambition') || q.includes('career')) {
-        reply = `My 5-year vision is clear and ambitious:<br><br>🎯 <strong>Year 1–2:</strong> Excel as a Business Development Manager/Engineer in a UAE-based MNC — owning a full B2B territory, building client relationships, and consistently exceeding revenue targets.<br><br>📈 <strong>Year 3–4:</strong> Step into a Senior BDM or Regional Sales Director role, leveraging my MBA Marketing expertise to design go-to-market strategies for the GCC market.<br><br>🌍 <strong>Year 5+:</strong> Lead a high-performance B2B sales division, building and mentoring a regional sales team across the Middle East.<br><br>I'm playing the long game — but I deliver short-term results on the way there! 🚀`;
+      // --- 25. 5-YEAR PLAN / GOALS ---
+      } else if (q.includes('5 year') || q.includes('five year') || q.includes('future') || q.includes('goal') || q.includes('aspiration') || q.includes('plan') || q.includes('ambition')) {
+        reply = `My 5-year vision is clear and ambitious:<br><br>
+🎯 <strong>Year 1–2:</strong> Excel as a Business Development Engineer in a UAE-based MNC — owning a full B2B territory, building client relationships, and consistently exceeding revenue targets.<br><br>
+📈 <strong>Year 3–4:</strong> Step into a Senior BDM or Regional Sales Director role, leveraging my MBA Marketing expertise to design go-to-market strategies for the GCC market.<br><br>
+🌍 <strong>Year 5+:</strong> Lead a high-performance B2B sales division, building and mentoring a regional sales team across the Middle East.<br><br>
+I'm playing the long game — but I deliver short-term results on the way there! 🚀`;
 
-      // --- PERSONALITY / TELL ME ABOUT YOURSELF ---
-      } else if (q.includes('tell me about') || q.includes('introduce') || q.includes('who are you') || q.includes('yourself') || q.includes('background')) {
-        reply = `I'm <strong>Tushar Sushil Phulari</strong> — a 23-year-old Business Development professional who bridges the gap between engineering and sales.<br><br>⚙️ I hold a <strong>B.Tech in Instrumentation &amp; Control Engineering</strong> (VIT Pune, CGPA 8.30) and I'm currently pursuing my <strong>MBA in Marketing at Middlesex University Dubai</strong>.<br><br>💼 With 1.5+ years of B2B industrial sales experience at Hoffmann Group India, I expanded territory clients by 20% and consistently hit quota. Before that, I generated 40+ SQLs in 4 months at Shreeji Marketing.<br><br>🌍 I'm currently based in <strong>Dubai, UAE</strong>, available to join immediately, and passionate about building revenue-driving partnerships in the GCC industrial market. What would you like to know more about? 😊`;
+      // --- 26. TEAM PLAYER / COLLABORATION ---
+      } else if (q.includes('team') || q.includes('collaboration') || q.includes('work with others') || q.includes('colleague')) {
+        reply = `I'm a strong team player who also thrives independently — the best of both worlds!<br><br>
+🤝 At <strong>Hoffmann Group</strong>, I collaborated cross-functionally with product teams, technical engineers, and logistics to deliver seamless client experiences.<br><br>
+👥 At <strong>Shreeji Marketing</strong>, I partnered directly with senior sales directors to craft technical proposals and qualification strategies.<br><br>
+🔬 My <strong>Scopus-indexed research paper</strong> was a collaborative academic project — demonstrating my ability to coordinate, contribute, and deliver in team settings.<br><br>
+I believe great sales results come from great teamwork. I lift my teammates up, share knowledge openly, and always put the team's goals first! 🌟`;
 
-      // --- TEAM PLAYER / COLLABORATION ---
-      } else if (q.includes('team') || q.includes('collaboration') || q.includes('work with others') || q.includes('colleague') || q.includes('leadership')) {
-        reply = `I'm a strong team player who also thrives independently — the best of both worlds!<br><br>🤝 At <strong>Hoffmann Group</strong>, I collaborated cross-functionally with product teams, technical engineers, and logistics to deliver seamless client experiences.<br><br>👥 At <strong>Shreeji Marketing</strong>, I partnered directly with senior sales directors to craft technical proposals and qualification strategies.<br><br>🔬 My <strong>Scopus-indexed research paper</strong> was a collaborative academic project — demonstrating my ability to coordinate, contribute, and deliver in team settings.<br><br>I believe great sales results come from great teamwork. I lift my teammates up, share knowledge openly, and always put the team's goals first! 🌟`;
-
-      // --- MOTIVATION / PASSION ---
+      // --- 27. MOTIVATION / PASSION ---
       } else if (q.includes('motivat') || q.includes('passion') || q.includes('why sales') || q.includes('why bd') || q.includes('why business') || q.includes('love about') || q.includes('enjoy')) {
-        reply = `What drives me every single day is the thrill of turning a cold prospect into a long-term client partner!<br><br>🔥 I genuinely love the <strong>problem-solving aspect</strong> of B2B sales — understanding a client's pain point and crafting a solution that truly helps their business.<br><br>📈 I'm energized by <strong>metrics and momentum</strong> — watching a pipeline grow, a deal progress through stages, and finally seeing the signature on the contract.<br><br>🌍 Working in the <strong>GCC/Dubai market</strong> excites me because of the sheer scale of industrial opportunity here. The UAE is a powerhouse, and I want to be part of its growth story.<br><br>Sales is not just a job for me — it's the sport I wake up to win every morning! 🏆`;
+        reply = `What drives me every single day is the thrill of turning a cold prospect into a long-term client partner!<br><br>
+🔥 I genuinely love the <strong>problem-solving aspect</strong> of B2B sales — understanding a client's pain point and crafting a solution that truly helps their business.<br><br>
+📈 I'm energized by <strong>metrics and momentum</strong> — watching a pipeline grow, a deal progress through stages, and finally seeing the signature on the contract.<br><br>
+🌍 Working in the <strong>GCC/Dubai market</strong> excites me because of the sheer scale of industrial opportunity here. The UAE is a powerhouse, and I want to be part of its growth story.<br><br>
+Sales is not just a job for me — it's the sport I wake up to win every morning! 🏆`;
 
-      // --- LINKEDIN / SOCIAL ---
-      } else if (q.includes('linkedin') || q.includes('social') || q.includes('online') || q.includes('profile')) {
-        reply = `You can connect with me on LinkedIn and explore my full professional profile!<br><br>🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold underline">linkedin.com/in/tusharphulari303</a><br><br>My LinkedIn showcases my experience at Hoffmann Group India and Shreeji Marketing, my Scopus-indexed research publication, recommendations, and my MBA journey at Middlesex University Dubai.<br><br>📩 I respond to all connection requests and messages within 24 hours. Let's connect! 🤝`;
+      // --- 28. LINKEDIN / SOCIAL ---
+      } else if (q.includes('linkedin') || q.includes('social') || q.includes('online')) {
+        reply = `You can connect with me on LinkedIn and explore my full professional profile!<br><br>
+🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold underline">linkedin.com/in/tusharphulari303</a><br><br>
+My LinkedIn showcases my experience at Hoffmann Group India and Shreeji Marketing, my Scopus-indexed research publication, recommendations, and my MBA journey at Middlesex University Dubai.<br><br>
+📩 I respond to all connection requests and messages within 24 hours. Let's connect! 🤝`;
 
-      // --- AGE / YOUNG / EXPERIENCE LEVEL ---
-      } else if (q.includes('young') || q.includes('age') || q.includes('experience level') || q.includes('senior') || q.includes('junior') || q.includes('fresh') || q.includes('graduate')) {
-        reply = `At 23, I bring a rare combination of youth, energy, and real-world results!<br><br>⚡ <strong>Misconception:</strong> "Young" doesn't mean "inexperienced." In 1.5+ years at Hoffmann Group India, I managed full sales territories across multiple Indian regions independently.<br><br>🏆 <strong>Track record:</strong> 20% client growth, 40+ SQLs, 100%+ quota attainment — these are senior-level outcomes delivered at a junior-level cost.<br><br>📚 <strong>MBA in Progress:</strong> I'm investing in strategic business knowledge while actively delivering results — I'm building the full package in real time.<br><br>You get someone who brings fresh ideas, deep hunger to prove themselves, AND a proven track record. That's rare. Let's talk! 🚀`;
+      // --- 29. CERTIFICATIONS & AWARDS ---
+      } else if (q.includes('certif') || q.includes('award') || q.includes('achievement') || q.includes('medal') || q.includes('ncc') || q.includes('scout') || q.includes('google ux')) {
+        reply = `I'm proud of both my professional certifications and personal achievements!<br><br>
+📜 <strong>Certifications:</strong><br>
+• Google UX Design Professional Certificate<br>
+• IT Security Specialist<br>
+• Prompt Engineering Skills<br><br>
+🏆 <strong>Awards &amp; Recognition:</strong><br>
+• <strong>National Gold Medalist</strong> — Academic Excellence<br>
+• <strong>Rajya Puraskar Scout Governor's Award</strong> — Leadership &amp; Community Service<br>
+• <strong>NCC 'A' Certificate</strong> — Discipline &amp; National Service<br><br>
+These recognitions reflect my commitment to excellence in everything I pursue! 🌟`;
 
-      // --- PUBLICATIONS / RESEARCH ---
-      } else if (q.includes('publication') || q.includes('research') || q.includes('paper') || q.includes('scopus') || q.includes('iot') || q.includes('blockchain') || q.includes('jetir') || q.includes('neuroquantology')) {
-        reply = `I've authored and co-authored multiple peer-reviewed research publications!<br><br>🔬 <strong>Scopus-Indexed (Top-Tier):</strong><br>"Improving Security of IoT Devices Using Blockchain" — designed a decentralized consensus layer for firmware integrity verification on edge IoT gateways.<br><br>📄 <strong>JETIR Journal:</strong><br>"Police Database Management System" — secure RBAC-based crime logging and record retrieval system.<br><br>📄 <strong>NeuroQuantology Journal:</strong><br>"PMPL Transit Management System" — dynamic bus dispatch scheduling and passenger flow optimization.<br><br>Research has given me structured analytical thinking — I approach every sales territory like a scientific experiment: hypothesis, test, iterate, scale! 🎯`;
+      // --- 30. INTERVIEW / MEET / REACH YOU ---
+      } else if (q.includes('interview') || q.includes('meet') || q.includes('schedule') || q.includes('call') || q.includes('coffee') || q.includes('connect') || q.includes('talk') || q.includes('reach you') || q.includes('whatsapp') || q.includes('email')) {
+        reply = `I'd love to connect! Here's how to reach me:<br><br>
+📩 <strong>Email:</strong> <a href="mailto:tusharphulari303@gmail.com" class="text-indigo-600 dark:text-indigo-400 font-semibold whitespace-nowrap">tusharphulari303@gmail.com</a><br>
+📱 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/918180071303" target="_blank" class="text-emerald-600 dark:text-emerald-400 font-semibold whitespace-nowrap">+91&nbsp;8180071303</a><br>
+🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold whitespace-nowrap">linkedin.com/in/tusharphulari303</a><br><br>
+I'm based in <strong>Dubai, UAE</strong> and available for in-person meetings, video calls, or a quick coffee chat — whichever works best for you. I respond within 24 hours! ☕🌟`;
 
-      // --- INTERVIEW / MEET ---
-      } else if (q.includes('interview') || q.includes('meet') || q.includes('schedule') || q.includes('call') || q.includes('coffee') || q.includes('connect') || q.includes('talk')) {
-        reply = `I'd love to connect! Here's how to reach me:<br><br>📩 <strong>Email:</strong> <a href="mailto:tusharphulari303@gmail.com" class="text-indigo-600 dark:text-indigo-400 font-semibold">tusharphulari303@gmail.com</a><br>📱 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/918180071303" target="_blank" class="text-emerald-600 dark:text-emerald-400 font-semibold">+91 8180071303</a><br>🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold">linkedin.com/in/tusharphulari303</a><br><br>I'm based in <strong>Dubai, UAE</strong> and available for in-person meetings, video calls, or a quick coffee chat — whichever works best for you. I respond within 24 hours! ☕🌟`;
-
-      // --- LANGUAGE ---
+      // --- 31. LANGUAGES ---
       } else if (q.includes('language') || q.includes('english') || q.includes('hindi') || q.includes('marathi') || q.includes('arabic') || q.includes('speak')) {
-        reply = `I'm proficient in multiple languages, which is a strong asset in the diverse Dubai/GCC market!<br><br>🌍 <strong>Languages I speak:</strong><br>• <strong>English</strong> — Professional/Business fluency (primary work language)<br>• <strong>Hindi</strong> — Native/Fluent<br>• <strong>Marathi</strong> — Native/Fluent<br><br>Working in Dubai has also exposed me to multi-cultural business environments, and I adapt my communication style naturally across different cultural contexts. Clear, persuasive communication is one of my strongest sales assets! 💬`;
+        reply = `I'm proficient in multiple languages, which is a strong asset in the diverse Dubai/GCC market!<br><br>
+🌍 <strong>Languages I speak:</strong><br>
+• <strong>English</strong> — Professional/Business fluency (primary work language)<br>
+• <strong>Hindi</strong> — Native/Fluent<br>
+• <strong>Marathi</strong> — Native/Fluent<br><br>
+Working in Dubai has exposed me to multi-cultural business environments, and I adapt my communication style naturally across different cultural contexts. Clear, persuasive communication is one of my strongest sales assets! 💬`;
 
-      // --- INDUSTRY KNOWLEDGE ---
+      // --- 32. INDUSTRY & DOMAIN KNOWLEDGE ---
       } else if (q.includes('industry') || q.includes('industrial') || q.includes('manufacturing') || q.includes('b2b') || q.includes('market') || q.includes('sector') || q.includes('domain')) {
-        reply = `My domain expertise is in <strong>B2B Industrial Markets</strong> — and I bring both technical and commercial depth!<br><br>🏭 <strong>Industries I've Sold Into:</strong> Manufacturing, Heavy Fabrication, Industrial Cutting Tools &amp; Equipment, Automotive/EV, Engineering &amp; Process Plants<br><br>🌍 <strong>Markets I Know:</strong> West India (Maharashtra, MP), South India (Tamil Nadu, Kerala, Pondicherry), and now the <strong>UAE/GCC industrial market</strong><br><br>⚙️ My B.Tech in Instrumentation &amp; Control Engineering means I understand industrial systems from the inside out — a massive trust-builder with technical buyers and plant managers. I don't just sell; I consult and solve! 💡`;
+        reply = `My domain expertise is in <strong>B2B Industrial Markets</strong> — and I bring both technical and commercial depth!<br><br>
+🏭 <strong>Industries I've Sold Into:</strong> Manufacturing, Heavy Fabrication, Industrial Cutting Tools &amp; Equipment, Automotive/EV, Engineering &amp; Process Plants<br><br>
+🌍 <strong>Markets I Know:</strong> West India (Maharashtra, MP), South India (Tamil Nadu, Kerala, Pondicherry), and now the <strong>UAE/GCC industrial market</strong><br><br>
+⚙️ My B.Tech in Instrumentation &amp; Control Engineering means I understand industrial systems from the inside out — a massive trust-builder with technical buyers and plant managers. I don't just sell; I consult and solve! 💡`;
 
-      // --- DEFAULT FALLBACK ---
+      // --- 33. DEFAULT FALLBACK ---
       } else {
-        reply = `Great question! I'm <strong>Tushar Sushil Phulari</strong> — a 23-year-old B2B Business Development Engineer based in Dubai, UAE, with 1.5+ years of proven industrial sales experience.<br><br>Here's a snapshot of who I am:<br>📈 20% territory growth at Hoffmann Group India<br>🎯 40+ SQLs in 4 months at Shreeji Marketing<br>🎓 MBA Marketing (Middlesex Dubai) + B.Tech Engineering (VIT Pune, 8.30 CGPA)<br>🔬 Scopus-indexed research author<br>🌍 Based in Dubai — available immediately!<br><br>Feel free to ask me anything — about my experience, skills, projects, salary expectations, or just schedule a chat! I'm an open book. 😊`;
+        reply = `Great question! I'm <strong>Tushar Sushil Phulari</strong> — a 23-year-old B2B Business Development Engineer based in Dubai, UAE, with 1.5+ years of proven industrial sales experience.<br><br>
+Here's a snapshot of who I am:<br>
+📈 20% territory growth at Hoffmann Group India<br>
+🎯 40+ SQLs in 4 months at Shreeji Marketing<br>
+🎓 MBA Marketing (Middlesex Dubai) + B.Tech Engineering (VIT Pune, 8.30 CGPA)<br>
+🔬 Scopus-indexed research author<br>
+🌍 Based in Dubai — available immediately!<br><br>
+Feel free to ask me anything — about my experience, skills, projects, salary expectations, or just schedule a chat! I'm an open book. 😊`;
       }
 
-      renderAiChatReply(reply);
+      renderAiChatReply(reply, buttons);
     }
   </script>
 </body>
