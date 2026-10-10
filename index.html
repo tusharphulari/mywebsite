@@ -172,16 +172,8 @@
     </div>
 
     <!-- 2. INTERACTIVE CHAT & RICH CONTENT CONTAINER -->
-    <div id="conversation-container" class="w-full hidden flex-col items-center space-y-6 pt-4 pb-2 transition-all duration-500">
+    <div id="conversation-container" class="w-full hidden flex-col items-center space-y-6 pt-6 sm:pt-4 pb-2 transition-all duration-500">
       
-      <!-- Top Action Bar: Home Button on Right Side -->
-      <div class="w-full flex items-center justify-end max-w-2xl px-1">
-        <button onclick="showHeroView()" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white/90 dark:bg-slate-900/90 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/90 dark:border-slate-800 shadow-sm text-xs sm:text-sm font-bold transition-all hover:scale-105 active:scale-95 group cursor-pointer" title="Back to Front Page">
-          <i class="fa-solid fa-house text-xs text-indigo-600 dark:text-indigo-400"></i>
-          <span>Home</span>
-        </button>
-      </div>
-
       <!-- User Query Pill Banner (Top) -->
       <div id="user-query-pill" class="self-center bg-blue-600 text-white font-medium text-sm sm:text-base px-6 py-2.5 rounded-full shadow-md max-w-xl text-center animate-fade-in">
         Tell me about yourself briefly.
@@ -280,15 +272,15 @@
     </div>
   </footer>
 
-  <!-- Floating Bottom-Right Controls Dock: LinkedIn, WhatsApp, Theme Toggle, Home Button -->
-  <aside id="bottom-right-dock" class="fixed bottom-24 sm:bottom-6 right-3 sm:right-6 z-30 flex items-center gap-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-1.5 sm:p-2 rounded-full border border-slate-200/80 dark:border-slate-800 shadow-xl transition-all hover:shadow-2xl">
+  <!-- Floating Top-Right Controls Dock: LinkedIn, WhatsApp, Theme Toggle, Home Button -->
+  <aside id="top-right-dock" class="fixed top-3 sm:top-5 right-3 sm:right-6 z-30 flex items-center gap-1.5 sm:gap-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-1.5 sm:p-2 rounded-full border border-slate-200/80 dark:border-slate-800 shadow-xl transition-all hover:shadow-2xl">
     <!-- LinkedIn Direct Link -->
     <a href="https://linkedin.com/in/tusharphulari303" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100/90 dark:bg-slate-800/90 hover:bg-[#0077b5] hover:text-white text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 transition-all hover:scale-105 active:scale-95" title="LinkedIn Profile">
       <i class="fa-brands fa-linkedin-in text-sm"></i>
     </a>
 
-    <!-- WhatsApp Direct Link -->
-    <a href="https://wa.me/918180071303" target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100/90 dark:bg-slate-800/90 hover:bg-[#25D366] hover:text-white text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 transition-all hover:scale-105 active:scale-95" title="Chat on WhatsApp">
+    <!-- WhatsApp Direct Link with Pre-filled Opportunity Message -->
+    <a href="https://wa.me/918180071303?text=Hi%20Tushar%2C%20I%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20background%20in%20B2B%20sales%20and%20business%20development.%20I%E2%80%99d%20like%20to%20connect%20and%20discuss%20a%20possible%20opportunity." target="_blank" rel="noopener noreferrer" class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100/90 dark:bg-slate-800/90 hover:bg-[#25D366] hover:text-white text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 transition-all hover:scale-105 active:scale-95" title="Chat on WhatsApp">
       <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
     </a>
 
@@ -326,7 +318,7 @@
           <span>Me</span>
         </div>
         <div class="space-y-1.5">
-          <button data-quick-q="Tell me about yourself briefly." class="quick-question-item w-full flex items-center justify-between p-3.5 rounded-xl bg-slate-900 text-white dark:bg-slate-800 font-semibold hover:bg-slate-800 transition-all text-left">
+          <button data-quick-q="Who are you?" class="quick-question-item w-full flex items-center justify-between p-3.5 rounded-xl bg-slate-900 text-white dark:bg-slate-800 font-semibold hover:bg-slate-800 transition-all text-left">
             <span>Who are you?</span>
             <i class="fa-solid fa-chevron-right text-xs opacity-75"></i>
           </button>
@@ -344,20 +336,20 @@
             <span>Can I see your resume?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
-          <button data-quick-q="What makes you a valuable team member for our company?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="What makes you a valuable team member?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>What makes you a valuable team member?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
-          <button data-quick-q="Where are you currently located and are you available to join immediately?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
-            <span>Where are you based & availability?</span>
+          <button data-quick-q="Where are you based and what is your availability?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+            <span>Where are you based and what is your availability?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
-          <button data-quick-q="Why should an MNC in Dubai hire you for Business Development?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="Why should I hire you?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>Why should I hire you?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
-          <button data-quick-q="What is your educational background and qualifications?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
-            <span>What's your educational background?</span>
+          <button data-quick-q="What is your educational background?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+            <span>What is your educational background?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
         </div>
@@ -370,15 +362,15 @@
           <span>Projects & Publications</span>
         </div>
         <div class="space-y-1.5">
-          <button data-quick-q="What projects or publications are you most proud of?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="What projects are you most proud of?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>What projects are you most proud of?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
-          <button data-quick-q="Tell me about your Scopus-indexed research paper on IoT Security and Blockchain." class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
-            <span>Tell me about IoT Security using Blockchain</span>
+          <button data-quick-q="Tell me about your IoT Security research paper" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+            <span>Tell me about your IoT Security research paper</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
-          <button data-quick-q="Tell me about your outbound lead generation and CRM workflow project." class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="Tell me about your B2B Outbound Lead Engine" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>Tell me about your B2B Outbound Lead Engine</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
@@ -392,11 +384,11 @@
           <span>Skills</span>
         </div>
         <div class="space-y-1.5">
-          <button data-quick-q="What are your core sales and technical skills?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="What are your sales & technical skills?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>What are your sales & technical skills?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
-          <button data-quick-q="What CRM software and sales intelligence tools do you know?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="What CRM tools do you use?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>What CRM tools do you use?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
@@ -410,11 +402,11 @@
           <span>Experience</span>
         </div>
         <div class="space-y-1.5">
-          <button data-quick-q="What was your experience and key achievements at Hoffmann Group India?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="What was your experience at Hoffmann Group?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>What was your experience at Hoffmann Group?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
-          <button data-quick-q="What did you do during your sales internship at Shreeji Marketing Corporation?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="Tell me about your role at Shreeji Marketing" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>Tell me about your role at Shreeji Marketing</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
@@ -428,12 +420,12 @@
           <span>Contact & Future</span>
         </div>
         <div class="space-y-1.5">
-          <button data-quick-q="How can I reach you? What kind of role would make you say 'yes' immediately?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
+          <button data-quick-q="How can I reach you?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
             <span>How can I reach you?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
           <button data-quick-q="Where are you located in Dubai?" class="quick-question-item w-full flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all text-left">
-            <span>Where are you located?</span>
+            <span>Where are you located in Dubai?</span>
             <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
           </button>
         </div>
@@ -1207,7 +1199,7 @@
               </a>
 
               <!-- WhatsApp / Phone Card -->
-              <a href="https://wa.me/918180071303" target="_blank" rel="noopener noreferrer" class="group bg-white/95 dark:bg-slate-900/95 hover:bg-slate-50 dark:hover:bg-slate-800/80 p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm flex items-center justify-between transition-all">
+              <a href="https://wa.me/918180071303?text=Hi%20Tushar%2C%20I%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20background%20in%20B2B%20sales%20and%20business%20development.%20I%E2%80%99d%20like%20to%20connect%20and%20discuss%20a%20possible%20opportunity." target="_blank" rel="noopener noreferrer" class="group bg-white/95 dark:bg-slate-900/95 hover:bg-slate-50 dark:hover:bg-slate-800/80 p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm flex items-center justify-between transition-all">
                 <div class="flex items-center gap-3.5">
                   <div class="w-11 h-11 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">
                     <i class="fa-brands fa-whatsapp"></i>
@@ -1749,17 +1741,19 @@ This combination means I build instant technical credibility with engineers and 
           </button>
         `;
 
-      // --- 12. WHY SHOULD AN MNC IN DUBAI HIRE YOU? (Drawer Question 5) ---
-      } else if (q.includes('why should an mnc') || (q.includes('hire you') && (q.includes('mnc') || q.includes('dubai'))) || (q.includes('why should') && q.includes('hire'))) {
-        reply = `Here is why an MNC in Dubai should hire me for Business Development:<br><br>
-🎯 <strong>1. Unique Dual Competence (Engineering + MBA):</strong><br>
-Most sales reps struggle with technical engineering specs, while most engineers struggle with commercial closing. Holding a B.Tech in Instrumentation &amp; Control and pursuing an MBA in Marketing at Middlesex University Dubai, I speak the language of plant directors AND deliver high-margin commercial agreements.<br><br>
-📈 <strong>2. Proven Track Record at a Global MNC:</strong><br>
-At <strong>Hoffmann Group India</strong> (German tooling MNC), I managed expansive territories across West and South India, grew our B2B account base by <strong>20%</strong>, and achieved consecutive quarter-over-quarter quota attainment.<br><br>
-⚡ <strong>3. Self-Sufficient Outbound Engine:</strong><br>
-I don't wait for inbound leads. At Shreeji Marketing, I delivered <strong>40+ SQLs in 4 months</strong> via proactive prospecting using LinkedIn Sales Navigator and CRM automations.<br><br>
-🌍 <strong>4. Based in Dubai &amp; Ready Immediately:</strong><br>
-I am already residing in Dubai, available with <strong>zero notice period</strong>, and ready to start generating revenue for your team from Day 1! 🚀`;
+      // --- 12. WHY SHOULD I HIRE YOU? (Drawer Question 5) ---
+      } else if (q.includes('why should i hire you') || q.includes('why should we hire you') || q.includes('why hire you') || q.includes('why should an mnc') || (q.includes('why') && q.includes('hire'))) {
+        reply = `Here is why you should hire me:<br><br>
+🎯 <strong>1. Dual Competence (Engineering + MBA):</strong><br>
+Most sales professionals lack technical engineering depth, while most engineers struggle with commercial closing. Holding a B.Tech in Instrumentation &amp; Control and pursuing an MBA in Marketing at Middlesex University Dubai, I speak the technical language of plant directors, CTOs, and engineering buyers AND close high-margin commercial agreements.<br><br>
+📈 <strong>2. Proven Commercial Results &amp; Quota Attainment:</strong><br>
+At <strong>Hoffmann Group India</strong> (premier German tooling MNC), I managed expansive territories across West and South India, grew our B2B account base by <strong>20%</strong>, and achieved consecutive quarter-over-quarter quota attainment.<br><br>
+⚡ <strong>3. Proactive Outbound Revenue Engine:</strong><br>
+I don't wait for inbound leads. At Shreeji Marketing, I delivered <strong>40+ Sales Qualified Leads (SQLs) in 4 months</strong> via proactive prospecting using LinkedIn Sales Navigator, Salesforce, and HubSpot.<br><br>
+🔬 <strong>4. Analytical Problem-Solving &amp; Research Rigor:</strong><br>
+Author of a Scopus-indexed research paper on IoT Security &amp; Blockchain — proving analytical depth, structured thinking, and execution discipline.<br><br>
+🌍 <strong>5. Dubai Ground Presence &amp; Immediate Availability:</strong><br>
+I am currently based in Dubai, available with <strong>zero notice period</strong>, and ready to start generating revenue for your team from Day 1! 🚀`;
         buttons = `
           <button onclick="renderContactView()" class="px-3.5 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
             Schedule a Chat in Dubai ☕
@@ -1792,9 +1786,9 @@ Available immediately with zero notice period to support your regional growth! �
         `;
 
       // --- 14. CURRENT LOCATION & IMMEDIATE AVAILABILITY (Drawer Question 4) ---
-      } else if (q.includes('where are you currently located and are you available') || q.includes('available to join immediately') || (q.includes('currently located') && q.includes('available')) || (q.includes('availability') && (q.includes('immediate') || q.includes('join')))) {
-        reply = `📍 <strong>Location:</strong> I am currently living in <strong>Dubai, United Arab Emirates</strong>.<br><br>
-⚡ <strong>Availability:</strong> I am available to join <strong>IMMEDIATELY with ZERO notice period</strong>.<br><br>
+      } else if (q.includes('where are you based and what is your availability') || (q.includes('based') && q.includes('availability')) || (q.includes('location') && q.includes('availability')) || q.includes('where are you currently located and are you available') || q.includes('available to join immediately') || (q.includes('currently located') && q.includes('available')) || (q.includes('availability') && (q.includes('immediate') || q.includes('join')))) {
+        reply = `📍 <strong>Location &amp; Availability:</strong> I am currently based in <strong>Dubai, United Arab Emirates</strong>, and available to join <strong>immediately with zero notice period</strong>:<br><br>
+⚡ <strong>Immediate Availability:</strong> Ready to start with <strong>zero notice period</strong>.<br><br>
 🎓 <strong>Current Academic Status:</strong> I am pursuing my <strong>MBA in Marketing at Middlesex University Dubai</strong>, which allows me full flexibility to take on a full-time Business Development or Technical Sales role in the UAE.<br><br>
 💼 <strong>Ready for Immediate Deployment:</strong><br>
 • All educational documents, certifications, and background references are ready.<br>
@@ -1811,7 +1805,8 @@ Available immediately with zero notice period to support your regional growth! �
 
       // --- 15. WHERE ARE YOU LOCATED IN DUBAI? (Drawer Question 15) ---
       } else if (q.includes('located in dubai') || q.includes('where are you located in dubai') || (q.includes('where') && q.includes('in dubai') && !q.includes('hire')) || q === 'where are you located?' || q === 'where are you located') {
-        reply = `📍 <strong>My Dubai Location &amp; Accessibility:</strong><br><br>
+        reply = `Here is my location and availability in Dubai:<br><br>
+📍 <strong>Location &amp; Accessibility:</strong><br>
 • I am currently residing in <strong>Dubai, United Arab Emirates</strong>.<br>
 • I study at <strong>Middlesex University Dubai</strong> located in <strong>Dubai Knowledge Park</strong>, giving me central accessibility across key business districts including Dubai Media City, Internet City, Dubai Marina, Business Bay, DIFC, Al Quoz, and JAFZA.<br>
 • I am available for immediate in-person meetings, client presentations, or a quick coffee discussion anywhere across Dubai, Sharjah, or Abu Dhabi.<br><br>
@@ -1825,11 +1820,11 @@ Feel free to message me on WhatsApp at <strong class="whitespace-nowrap">+91&nbs
           </button>
         `;
 
-      // --- 16. HOW CAN I REACH YOU? WHAT ROLE WOULD MAKE YOU SAY 'YES' IMMEDIATELY? (Drawer Question 14) ---
-      } else if (q.includes('say \'yes\' immediately') || q.includes('say yes immediately') || (q.includes('reach you') && (q.includes('role') || q.includes('yes') || q.includes('immediately')))) {
-        reply = `I am actively interviewing and ready to take on my next high-impact challenge! Here is how to reach me and what I am looking for:<br><br>
+      // --- 16. HOW CAN I REACH YOU? (Drawer Question 14) ---
+      } else if (q.includes('how can i reach you') || q.includes('how to reach you') || q.includes('reach you') || q.includes('say \'yes\' immediately') || q.includes('say yes immediately')) {
+        reply = `Here is how you can reach me directly, and what kind of role I am targeting:<br><br>
 📞 <strong>Direct Contact Channels:</strong><br>
-• 📱 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/918180071303" target="_blank" class="text-emerald-600 dark:text-emerald-400 font-bold whitespace-nowrap">+91&nbsp;8180071303</a><br>
+• 📱 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/918180071303?text=Hi%20Tushar%2C%20I%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20background%20in%20B2B%20sales%20and%20business%20development.%20I%E2%80%99d%20like%20to%20connect%20and%20discuss%20a%20possible%20opportunity." target="_blank" class="text-emerald-600 dark:text-emerald-400 font-bold whitespace-nowrap">+91&nbsp;8180071303</a><br>
 • 📩 <strong>Email:</strong> <a href="mailto:tusharphulari303@gmail.com" class="text-indigo-600 dark:text-indigo-400 font-bold whitespace-nowrap">tusharphulari303@gmail.com</a><br>
 • 🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-blue-600 dark:text-blue-400 font-bold whitespace-nowrap">linkedin.com/in/tusharphulari303</a><br>
 • 📍 <strong>Location:</strong> Dubai, UAE (Available for in-person meetings anytime)<br><br>
@@ -1994,7 +1989,7 @@ These recognitions reflect my commitment to excellence in everything I pursue! �
       } else if (q.includes('interview') || q.includes('meet') || q.includes('schedule') || q.includes('call') || q.includes('coffee') || q.includes('connect') || q.includes('talk') || q.includes('reach you') || q.includes('whatsapp') || q.includes('email')) {
         reply = `I'd love to connect! Here's how to reach me:<br><br>
 📩 <strong>Email:</strong> <a href="mailto:tusharphulari303@gmail.com" class="text-indigo-600 dark:text-indigo-400 font-semibold whitespace-nowrap">tusharphulari303@gmail.com</a><br>
-📱 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/918180071303" target="_blank" class="text-emerald-600 dark:text-emerald-400 font-semibold whitespace-nowrap">+91&nbsp;8180071303</a><br>
+📱 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/918180071303?text=Hi%20Tushar%2C%20I%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20background%20in%20B2B%20sales%20and%20business%20development.%20I%E2%80%99d%20like%20to%20connect%20and%20discuss%20a%20possible%20opportunity." target="_blank" class="text-emerald-600 dark:text-emerald-400 font-semibold whitespace-nowrap">+91&nbsp;8180071303</a><br>
 🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tusharphulari303" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold whitespace-nowrap">linkedin.com/in/tusharphulari303</a><br><br>
 I'm based in <strong>Dubai, UAE</strong> and available for in-person meetings, video calls, or a quick coffee chat — whichever works best for you. I respond within 24 hours! ☕🌟`;
 
